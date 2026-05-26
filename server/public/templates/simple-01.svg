@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 560" fill="none">
+  <rect width="400" height="560" fill="white"/>
+  <rect x="0" y="0" width="400" height="120" fill="#2563eb"/>
+  <text x="30" y="55" font-size="28" font-weight="bold" fill="white">张三</text>
+  <text x="30" y="80" font-size="14" fill="#e0e7ff">前端开发工程师 | 3年经验</text>
+  <text x="30" y="100" font-size="12" fill="#e0e7ff">138-0013-8000 | zhangsan@email.com</text>
+  
+  <text x="30" y="155" font-size="16" font-weight="bold" fill="#2563eb">求职意向</text>
+  <line x1="30" y1="165" x2="370" y2="165" stroke="#2563eb" stroke-width="2"/>
+  <text x="30" y="190" font-size="13" fill="#333">高级前端工程师 | 北京 | 25-35K</text>
+  
+  <text x="30" y="225" font-size="16" font-weight="bold" fill="#2563eb">教育背景</text>
+  <line x1="30" y1="235" x2="370" y2="235" stroke="#2563eb" stroke-width="2"/>
+  <text x="30" y="260" font-size="14" font-weight="bold" fill="#333">北京大学</text>
+  <text x="280" y="260" font-size="12" fill="#666">2018.09 - 2022.06</text>
+  <text x="30" y="280" font-size="13" fill="#555">计算机科学与技术 | 本科 | GPA 3.8/4.0</text>
+  
+  <text x="30" y="315" font-size="16" font-weight="bold" fill="#2563eb">专业技能</text>
+  <line x1="30" y1="325" x2="370" y2="325" stroke="#2563eb" stroke-width="2"/>
+  <text x="30" y="350" font-size="13" fill="#333">• 熟练掌握 Vue3、React、TypeScript</text>
+  <text x="30" y="372" font-size="13" fill="#333">• 熟悉 Node.js、Webpack、Vite 构建工具</text>
+  <text x="30" y="394" font-size="13" fill="#333">• 了解 HTTP 协议、浏览器渲染原理</text>
+  
+  <text x="30" y="429" font-size="16" font-weight="bold" fill="#2563eb">自我评价</text>
+  <line x1="30" y1="439" x2="370" y2="439" stroke="#2563eb" stroke-width="2"/>
+  <text x="30" y="464" font-size="13" fill="#333">3年前端开发经验，熟悉主流前端框架，具备良好的</text>
+  <text x="30" y="484" font-size="13" fill="#333">编码习惯和团队协作能力，追求高质量代码和优秀用户体验。</text>
+</svg>

@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 560" fill="none">
+  <rect width="400" height="560" fill="white"/>
+  <rect x="0" y="0" width="140" height="560" fill="#1a1a2e"/>
+  
+  <text x="20" y="50" font-size="24" font-weight="bold" fill="white">李四</text>
+  <text x="20" y="72" font-size="12" fill="#a0a0b0">高级产品经理</text>
+  
+  <line x1="20" y1="90" x2="120" y2="90" stroke="#4a4a6a" stroke-width="1"/>
+  
+  <text x="20" y="115" font-size="11" font-weight="bold" fill="#8a8aa0">联系方式</text>
+  <text x="20" y="135" font-size="11" fill="#c0c0d0">139-0013-9000</text>
+  <text x="20" y="155" font-size="11" fill="#c0c0d0">lisi@email.com</text>
+  <text x="20" y="175" font-size="11" fill="#c0c0d0">北京·朝阳区</text>
+  
+  <text x="20" y="205" font-size="11" font-weight="bold" fill="#8a8aa0">教育背景</text>
+  <text x="20" y="225" font-size="11" fill="#c0c0d0">清华大学</text>
+  <text x="20" y="243" font-size="10" fill="#9090a0">工商管理 MBA</text>
+  
+  <text x="20" y="273" font-size="11" font-weight="bold" fill="#8a8aa0">技能特长</text>
+  <text x="20" y="293" font-size="10" fill="#c0c0d0">产品设计</text>
+  <text x="20" y="311" font-size="10" fill="#c0c0d0">数据分析</text>
+  <text x="20" y="329" font-size="10" fill="#c0c0d0">项目管理</text>
+  <text x="20" y="347" font-size="10" fill="#c0c0d0">用户研究</text>
+  
+  <text x="160" y="40" font-size="14" font-weight="bold" fill="#1a1a2e">工作经历</text>
+  <line x1="160" y1="50" x2="380" y2="50" stroke="#1a1a2e" stroke-width="2"/>
+  
+  <text x="160" y="75" font-size="13" font-weight="bold" fill="#333">字节跳动</text>
+  <text x="300" y="75" font-size="11" fill="#666">2021-至今</text>
+  <text x="160" y="93" font-size="12" fill="#555">高级产品经理</text>
+  <text x="160" y="113" font-size="11" fill="#333">• 负责核心产品线规划，DAU提升200%</text>
+  <text x="160" y="131" font-size="11" fill="#333">• 主导用户增长项目，新增用户500万+</text>
+  
+  <text x="160" y="165" font-size="13" font-weight="bold" fill="#333">腾讯</text>
+  <text x="300" y="165" font-size="11" fill="#666">2019-2021</text>
+  <text x="160" y="183" font-size="12" fill="#555">产品经理</text>
+  <text x="160" y="203" font-size="11" fill="#333">• 负责社交产品功能设计与迭代</text>
+  <text x="160" y="221" font-size="11" fill="#333">• 建立数据分析体系，优化转化漏斗</text>
+  
+  <text x="160" y="260" font-size="14" font-weight="bold" fill="#1a1a2e">项目经历</text>
+  <line x1="160" y1="270" x2="380" y2="270" stroke="#1a1a2e" stroke-width="2"/>
+  
+  <text x="160" y="295" font-size="13" font-weight="bold" fill="#333">用户增长体系搭建</text>
+  <text x="160" y="315" font-size="11" fill="#555">搭建完整的用户增长体系，包括拉新、促活、留存三</text>
+  <text x="160" y="333" font-size="11" fill="#555">大模块，实现用户量级从100万到600万的突破。</text>
+</svg>

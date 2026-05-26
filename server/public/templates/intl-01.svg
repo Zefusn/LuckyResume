@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 560" fill="none">
+  <rect width="400" height="560" fill="white"/>
+  
+  <rect x="0" y="0" width="400" height="4" fill="#059669"/>
+  
+  <text x="30" y="45" font-size="26" font-weight="bold" fill="#0f172a">孙八</text>
+  <text x="30" y="65" font-size="13" fill="#059669">Business Analyst / 商业分析师</text>
+  
+  <rect x="250" y="25" width="120" height="45" rx="6" fill="#ecfdf5" stroke="#059669" stroke-width="1"/>
+  <text x="310" y="48" font-size="11" fill="#059669" text-anchor="middle">134-0013-4000</text>
+  <text x="310" y="63" font-size="11" fill="#059669" text-anchor="middle">sun8@corp.com</text>
+  
+  <line x1="30" y1="85" x2="370" y2="85" stroke="#e5e7eb" stroke-width="1"/>
+  
+  <text x="30" y="110" font-size="14" font-weight="bold" fill="#059669">EXPERIENCE / 工作经历</text>
+  
+  <text x="30" y="138" font-size="13" font-weight="bold" fill="#0f172a">McKinsey & Company</text>
+  <text x="280" y="138" font-size="11" fill="#94a3b8">2021-Present</text>
+  <text x="30" y="156" font-size="12" fill="#059669">Senior Business Analyst</text>
+  <text x="30" y="174" font-size="12" fill="#475569">• Led digital transformation projects for Fortune 500 clients</text>
+  <text x="30" y="192" font-size="12" fill="#475569">• Delivered $50M+ cost savings through process optimization</text>
+  
+  <text x="30" y="220" font-size="13" font-weight="bold" fill="#0f172a">Deloitte Consulting</text>
+  <text x="280" y="220" font-size="11" fill="#94a3b8">2019-2021</text>
+  <text x="30" y="238" font-size="12" fill="#059669">Business Analyst</text>
+  <text x="30" y="256" font-size="12" fill="#475569">• Conducted market research and competitive analysis</text>
+  <text x="30" y="274" font-size="12" fill="#475569">• Built financial models for investment decisions</text>
+  
+  <text x="30" y="305" font-size="14" font-weight="bold" fill="#059669">EDUCATION / 教育背景</text>
+  
+  <text x="30" y="330" font-size="13" font-weight="bold" fill="#0f172a">Columbia University</text>
+  <text x="280" y="330" font-size="11" fill="#94a3b8">2015-2019</text>
+  <text x="30" y="348" font-size="12" fill="#475569">B.S. in Economics & Mathematics | GPA 3.85/4.0</text>
+  
+  <text x="30" y="380" font-size="14" font-weight="bold" fill="#059669">SKILLS / 技能特长</text>
+  
+  <rect x="30" y="390" width="100" height="60" rx="8" fill="#ecfdf5"/>
+  <text x="80" y="415" font-size="11" fill="#059669" text-anchor="middle">数据分析</text>
+  <text x="80" y="433" font-size="10" fill="#94a3b8" text-anchor="middle">SQL/Python</text>
+  
+  <rect x="145" y="390" width="100" height="60" rx="8" fill="#ecfdf5"/>
+  <text x="195" y="415" font-size="11" fill="#059669" text-anchor="middle">财务建模</text>
+  <text x="195" y="433" font-size="10" fill="#94a3b8" text-anchor="middle">Excel/Tableau</text>
+  
+  <rect x="260" y="390" width="100" height="60" rx="8" fill="#ecfdf5"/>
+  <text x="310" y="415" font-size="11" fill="#059669" text-anchor="middle">项目管理</text>
+  <text x="310" y="433" font-size="10" fill="#94a3b8" text-anchor="middle">Agile/PMP</text>
+  
+  <text x="30" y="480" font-size="14" font-weight="bold" fill="#059669">LANGUAGES / 语言能力</text>
+  <text x="30" y="505" font-size="12" fill="#475569">中文：母语 | 英语：流利 (TOEFL 110) | 法语：基础</text>
+  
+  <text x="30" y="540" font-size="14" font-weight="bold" fill="#059669">CERTIFICATIONS / 证书</text>
+  <text x="30" y="558" font-size="12" fill="#475569">CFA Level II | PMP | Google Data Analytics Certificate</text>
+</svg>

@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-size: 14px;
+  line-height: 1.5;
+  color: $text-primary;
+  background-color: $bg-secondary;
+}
+
+a {
+  color: $primary-color;
+  text-decoration: none;
+  
+  &:hover {
+    color: $primary-hover;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+input, textarea, button {
+  font-family: inherit;
+}
+
+ul, ol {
+  list-style: none;
+}
