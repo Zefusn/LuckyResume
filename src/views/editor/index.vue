@@ -1,12 +1,15 @@
 <template>
   <div class="editor-page">
     <!-- 左侧模块列表 -->
-    <aside class="editor-sidebar">
+    <aside class="editor-sidebar" :class="{ collapsed: sidebarCollapsed }">
       <div class="sidebar-header">
-        <h3>简历模块</h3>
+        <h3 v-if="!sidebarCollapsed">简历模块</h3>
+        <n-button quaternary circle size="small" @click="toggleSidebar">
+          <template #icon><n-icon><component :is="sidebarCollapsed ? ChevronForwardOutline : ChevronBackOutline" /></n-icon></template>
+        </n-button>
       </div>
 
-      <div class="module-list">
+      <div class="module-list" v-if="!sidebarCollapsed">
         <div
           v-for="(section, index) in sections"
           :key="section.key"
@@ -29,7 +32,7 @@
       </div>
 
       <!-- AI 功能区 -->
-      <div class="ai-tools">
+      <div class="ai-tools" v-if="!sidebarCollapsed">
         <h3>AI 助手</h3>
         <div class="ai-buttons">
           <n-button block @click="handleAIGenerate">
@@ -121,21 +124,17 @@
     </main>
 
     <!-- 右侧预览区 -->
-    <aside class="editor-preview">
+    <aside class="editor-preview" :class="{ expanded: previewExpanded }">
       <div class="preview-header">
         <h3>实时预览</h3>
         <n-space>
-          <n-button size="small" @click="handleZoomOut">
-            <template #icon><n-icon><RemoveOutline /></n-icon></template>
-          </n-button>
-          <span class="zoom-level">{{ zoomLevel }}%</span>
-          <n-button size="small" @click="handleZoomIn">
-            <template #icon><n-icon><AddOutline /></n-icon></template>
+          <n-button quaternary circle size="small" @click="togglePreviewExpand">
+            <template #icon><n-icon><component :is="previewExpanded ? ContractOutline : ExpandOutline" /></n-icon></template>
           </n-button>
         </n-space>
       </div>
 
-      <div class="preview-container" :style="{ transform: `scale(${zoomLevel / 100})` }">
+      <div class="preview-container">
         <div class="resume-preview">
           <ResumePreview :content="resumeStore.content" />
         </div>
@@ -171,10 +170,11 @@ import { ref, computed, onMounted, markRaw } from 'vue'
 import { useRoute } from 'vue-router'
 import { useMessage } from 'naive-ui'
 import {
-  AddOutline, SparklesOutline, BulbOutline, AnalyticsOutline, RemoveOutline,
+  SparklesOutline, BulbOutline, AnalyticsOutline,
   PersonOutline, BriefcaseOutline, SchoolOutline, BuildOutline, CodeWorkingOutline,
   TrophyOutline, RibbonOutline, BookOutline, ChatboxOutline, HeartOutline,
-  LanguageOutline, FolderOpenOutline
+  LanguageOutline, FolderOpenOutline, ChevronBackOutline, ChevronForwardOutline,
+  ExpandOutline, ContractOutline
 } from '@vicons/ionicons5'
 import { useResumeStore } from '@/stores/resume'
 import { aiApi } from '@/api/ai'
@@ -197,9 +197,10 @@ const message = useMessage()
 const resumeStore = useResumeStore()
 
 const activeSection = ref('basic')
-const zoomLevel = ref(75)
 const showAIModal = ref(false)
 const aiLoading = ref(false)
+const sidebarCollapsed = ref(false)
+const previewExpanded = ref(false)
 
 const aiForm = ref({
   position: '',
@@ -246,12 +247,12 @@ function handleDrop(index: number) {
   dragIndex = -1
 }
 
-function handleZoomIn() {
-  if (zoomLevel.value < 150) zoomLevel.value += 10
+function toggleSidebar() {
+  sidebarCollapsed.value = !sidebarCollapsed.value
 }
 
-function handleZoomOut() {
-  if (zoomLevel.value > 50) zoomLevel.value -= 10
+function togglePreviewExpand() {
+  previewExpanded.value = !previewExpanded.value
 }
 
 function handleAIGenerate() {
@@ -319,15 +320,21 @@ onMounted(async () => {
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  transition: width 0.3s ease;
+
+  &.collapsed {
+    width: 48px;
+  }
 }
 
 .sidebar-header {
-  padding: 16px;
+  padding: 16px 12px;
   border-bottom: 1px solid #e8e8e8;
   display: flex;
   justify-content: space-between;
   align-items: center;
   h3 { font-size: 15px; }
+  .collapsed & { justify-content: center; }
 }
 
 .module-list {
@@ -383,6 +390,7 @@ onMounted(async () => {
   flex: 1;
   overflow-y: auto;
   padding: 24px;
+  min-width: 0;
 }
 
 .editor-content {
@@ -406,6 +414,14 @@ onMounted(async () => {
   border-left: 1px solid #e8e8e8;
   display: flex;
   flex-direction: column;
+  transition: width 0.3s ease, flex 0.3s ease;
+  flex-shrink: 0;
+
+  &.expanded {
+    flex: 1;
+    width: auto;
+    max-width: calc(50vw - 24px);
+  }
 }
 
 .preview-header {
@@ -416,24 +432,16 @@ onMounted(async () => {
   align-items: center;
 
   h3 { font-size: 15px; }
-
-  .zoom-level {
-    font-size: 13px;
-    color: #666;
-    min-width: 40px;
-    text-align: center;
-  }
 }
 
 .preview-container {
   flex: 1;
   overflow: auto;
   padding: 20px;
-  transform-origin: top center;
 }
 
 .resume-preview {
-  width: 210mm;
+  width: 100%;
   min-height: 297mm;
   background: #fff;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
