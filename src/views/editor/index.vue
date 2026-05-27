@@ -230,7 +230,7 @@ const showAIModal = ref(false)
 const aiLoading = ref(false)
 const sidebarCollapsed = ref(false)
 const previewExpanded = ref(false)
-const currentColor = ref('#18a058')
+const currentColor = ref('#3B82F6')
 const currentStyle = ref('default')
 
 const aiForm = ref({
@@ -249,8 +249,8 @@ const educationOptions = [
 ]
 
 const themeColors = [
-  '#18a058', '#2080f0', '#d03050', '#f0a020',
-  '#8a2be2', '#0ea5e9', '#e11d48', '#059669'
+  '#3B82F6', '#0EA5E9', '#8B5CF6', '#EC4899',
+  '#F59E0B', '#10B981', '#6366F1', '#EF4444'
 ]
 
 const templateStyles = [
@@ -439,7 +439,7 @@ onMounted(async () => {
   transition: all 0.2s;
 
   &:hover { background: #f5f7fa; }
-  &.active { background: #e8f5e9; color: #18a058; }
+  &.active { background: #EFF6FF; color: #3B82F6; }
 
   .module-info {
     display: flex;
@@ -480,11 +480,11 @@ onMounted(async () => {
   font-size: 13px;
   transition: all 0.2s;
 
-  &:hover { border-color: #18a058; }
+  &:hover { border-color: #3B82F6; }
   &.active {
-    background: #18a058;
+    background: #3B82F6;
     color: #fff;
-    border-color: #18a058;
+    border-color: #3B82F6;
   }
 }
 

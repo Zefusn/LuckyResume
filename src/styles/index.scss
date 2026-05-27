@@ -1,3 +1,23 @@
-@import './variables.scss';
-@import './reset.scss';
-@import './common.scss';
+@import './variables';
+@import './reset';
+@import './common';
+
+// ========== Naive UI 全局覆盖 ==========
+
+// 移除所有 focus 框线
+.n-button {
+  &:focus,
+  &:active,
+  &.n-button--focus {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+}
+
+.n-input--focus {
+  box-shadow: none !important;
+}
+
+.n-base-selection--active {
+  box-shadow: none !important;
+}

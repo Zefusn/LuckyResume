@@ -39,5 +39,12 @@ export default defineConfig({
     port: 3000,
     host: '0.0.0.0',
     open: true
+  },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `@use "@/styles/variables.scss" as *;\n`
+      }
+    }
   }
 })

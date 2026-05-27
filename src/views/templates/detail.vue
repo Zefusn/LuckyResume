@@ -42,19 +42,19 @@
               <h3>模板特点</h3>
               <ul>
                 <li>
-                  <n-icon color="#18a058"><CheckmarkCircleOutline /></n-icon>
+                  <n-icon color="#3B82F6"><CheckmarkCircleOutline /></n-icon>
                   ATS 招聘系统兼容
                 </li>
                 <li>
-                  <n-icon color="#18a058"><CheckmarkCircleOutline /></n-icon>
+                  <n-icon color="#3B82F6"><CheckmarkCircleOutline /></n-icon>
                   支持多语言内容
                 </li>
                 <li>
-                  <n-icon color="#18a058"><CheckmarkCircleOutline /></n-icon>
+                  <n-icon color="#3B82F6"><CheckmarkCircleOutline /></n-icon>
                   自适应排版布局
                 </li>
                 <li>
-                  <n-icon color="#18a058"><CheckmarkCircleOutline /></n-icon>
+                  <n-icon color="#3B82F6"><CheckmarkCircleOutline /></n-icon>
                   支持 PDF/Word 导出
                 </li>
               </ul>

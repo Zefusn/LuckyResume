@@ -2,32 +2,30 @@
   <div class="user-page">
     <div class="container">
       <div class="user-layout">
-        <!-- 侧边栏 -->
-        <aside class="user-sidebar">
-          <div class="user-info">
-            <n-avatar :size="64" :src="userStore.userInfo?.avatar" round>
+        <aside class="sidebar">
+          <div class="user-card">
+            <n-avatar :size="56" :src="userStore.userInfo?.avatar" round class="user-avatar">
               {{ userStore.userInfo?.nickname?.charAt(0) || 'U' }}
             </n-avatar>
             <h3>{{ userStore.userInfo?.nickname || '用户' }}</h3>
             <p>{{ userStore.userInfo?.phone }}</p>
           </div>
-          
-          <nav class="sidebar-nav">
-            <router-link 
-              v-for="item in navItems" 
+
+          <nav class="side-nav">
+            <router-link
+              v-for="item in navItems"
               :key="item.path"
               :to="item.path"
               class="nav-item"
               :class="{ active: route.path === item.path }"
             >
-              <n-icon><component :is="item.icon" /></n-icon>
+              <n-icon size="16"><component :is="item.icon" /></n-icon>
               <span>{{ item.label }}</span>
             </router-link>
           </nav>
         </aside>
-        
-        <!-- 内容区 -->
-        <main class="user-content">
+
+        <main class="user-main">
           <router-view />
         </main>
       </div>
@@ -37,13 +35,7 @@
 
 <script setup lang="ts">
 import { useRoute } from 'vue-router'
-import { 
-  DocumentTextOutline, 
-  HeartOutline, 
-  TimeOutline, 
-  TrashOutline, 
-  SettingsOutline 
-} from '@vicons/ionicons5'
+import { DocumentTextOutline, HeartOutline, TimeOutline, TrashOutline, SettingsOutline } from '@vicons/ionicons5'
 import { useUserStore } from '@/stores/user'
 
 const route = useRoute()
@@ -60,7 +52,7 @@ const navItems = [
 
 <style lang="scss" scoped>
 .user-page {
-  padding: 40px 0;
+  padding: 36px 0 80px;
 }
 
 .user-layout {
@@ -68,59 +60,98 @@ const navItems = [
   gap: 24px;
 }
 
-.user-sidebar {
-  width: 240px;
+.sidebar {
+  width: 220px;
   flex-shrink: 0;
 }
 
-.user-info {
-  background: #fff;
-  border-radius: 8px;
-  padding: 24px;
+.user-card {
+  background: $white;
+  border-radius: $r-card;
+  padding: 28px 20px;
   text-align: center;
+  box-shadow: $shadow-card;
   margin-bottom: 16px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
-  
+
+  .user-avatar {
+    margin-bottom: 12px;
+  }
+
   h3 {
-    margin-top: 12px;
     font-size: 16px;
+    font-weight: 500;
+    color: $text-title;
+    margin-bottom: 4px;
   }
-  
+
   p {
-    color: #999;
     font-size: 13px;
-    margin-top: 4px;
+    color: $text-ghost;
   }
 }
 
-.sidebar-nav {
-  background: #fff;
-  border-radius: 8px;
-  padding: 8px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
-  
-  .nav-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 12px 16px;
-    border-radius: 6px;
-    color: #333;
-    transition: all 0.2s;
-    
-    &:hover {
-      background: #f5f7fa;
-    }
-    
-    &.active {
-      background: #e8f5e9;
-      color: #18a058;
-    }
+.side-nav {
+  background: $white;
+  border-radius: $r-card;
+  padding: 6px;
+  box-shadow: $shadow-card;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: $r-sm;
+  font-size: 14px;
+  color: $text-body;
+  transition: all 0.2s $ease;
+
+  &:hover {
+    background: $gray-50;
+    color: $text-title;
+  }
+
+  &.active {
+    background: $blue-light;
+    color: $blue;
+    font-weight: 500;
   }
 }
 
-.user-content {
+.user-main {
   flex: 1;
   min-width: 0;
+}
+
+@media (max-width: 768px) {
+  .user-layout {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+  }
+
+  .user-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    text-align: left;
+    padding: 20px;
+  }
+
+  .side-nav {
+    display: flex;
+    overflow-x: auto;
+    gap: 4px;
+    padding: 4px;
+  }
+
+  .nav-item {
+    white-space: nowrap;
+    padding: 8px 12px;
+    font-size: 13px;
+  }
 }
 </style>

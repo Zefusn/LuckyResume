@@ -7,29 +7,50 @@
 html, body {
   height: 100%;
   font-size: 14px;
-  line-height: 1.5;
-  color: $text-primary;
-  background-color: $bg-secondary;
+  line-height: 1.6;
+  color: $text-body;
+  background-color: $bg-page;
+  font-family: $font;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: 0.01em;
 }
 
 a {
-  color: $primary-color;
+  color: inherit;
   text-decoration: none;
-  
-  &:hover {
-    color: $primary-hover;
-  }
 }
 
 img {
   max-width: 100%;
   height: auto;
+  display: block;
 }
 
-input, textarea, button {
+input, textarea, button, select {
   font-family: inherit;
+  font-size: inherit;
 }
 
 ul, ol {
   list-style: none;
+}
+
+::selection {
+  background: $blue-light;
+  color: $blue;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $gray-300;
+  border-radius: $r-pill;
 }

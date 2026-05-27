@@ -1,34 +1,53 @@
-// 主题色彩
-$primary-color: #18a058;
-$primary-hover: #36ad6a;
-$primary-pressed: #0c7a43;
+// ============================================
+// iOS 极简设计系统 - 纯白通透清爽商务
+// ============================================
 
-// 文字颜色
-$text-primary: #333333;
-$text-secondary: #666666;
-$text-placeholder: #999999;
+// 色彩系统 - 纯白+浅灰+iOS原生浅蓝
+$blue: #3B82F6;
+$blue-hover: #2563EB;
+$blue-light: #EFF6FF;
 
-// 背景色
-$bg-primary: #ffffff;
-$bg-secondary: #f5f7fa;
-$bg-dark: #1e1e1e;
+$gray-900: #1E293B;
+$gray-700: #374151;
+$gray-500: #6B7280;
+$gray-400: #9CA3AF;
+$gray-300: #D1D5DB;
+$gray-200: #E5E7EB;
+$gray-100: #F3F4F6;
+$gray-50: #F9FAFB;
+$white: #FFFFFF;
 
-// 边框
-$border-color: #e4e7ed;
-$border-radius: 4px;
-$border-radius-lg: 8px;
+// 语义色
+$text-title: $gray-900;
+$text-body: $gray-700;
+$text-muted: $gray-500;
+$text-ghost: $gray-400;
+$bg-page: $gray-50;
+$bg-card: $white;
+$bg-nav: $white;
+$border-subtle: $gray-100;
 
-// 阴影
-$box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
-$box-shadow-lg: 0 4px 24px rgba(0, 0, 0, 0.15);
+// 圆角
+$r-pill: 999px;
+$r-card: 16px;
+$r-nav: 8px;
+$r-sm: 8px;
+
+// 阴影 - 仅一种微阴影
+$shadow-card: 0 2px 12px rgba(0, 0, 0, 0.03);
 
 // 间距
-$spacing-xs: 4px;
-$spacing-sm: 8px;
-$spacing-md: 16px;
-$spacing-lg: 24px;
-$spacing-xl: 32px;
+$gap-section: 80px;
+$gap-card: 24px;
+$pad-card: 40px;
+$pad-section: 24px;
+
+// 字体
+$font: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Inter', 'Helvetica Neue', sans-serif;
 
 // 布局
-$header-height: 60px;
-$sidebar-width: 240px;
+$header-h: 56px;
+$max-w: 1080px;
+
+// 动效
+$ease: cubic-bezier(0.25, 0.1, 0.25, 1);

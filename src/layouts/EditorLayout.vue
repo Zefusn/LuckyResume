@@ -198,8 +198,8 @@ function exportWord() {
 <title>${title}</title>
 <style>
 body { font-family: 'Microsoft YaHei', sans-serif; font-size: 12px; color: #333; line-height: 1.6; padding: 40px; }
-h1 { color: #18a058; font-size: 26px; margin-bottom: 4px; }
-h2 { color: #18a058; font-size: 15px; border-bottom: 1px solid #eee; padding-bottom: 6px; margin-top: 18px; }
+h1 { color: #3B82F6; font-size: 26px; margin-bottom: 4px; }
+h2 { color: #3B82F6; font-size: 15px; border-bottom: 1px solid #eee; padding-bottom: 6px; margin-top: 18px; }
 .contact { color: #555; margin-bottom: 16px; }
 .item { margin-bottom: 12px; }
 .item-header { display: flex; justify-content: space-between; font-weight: bold; }

@@ -3,7 +3,7 @@
     <div class="error-content">
       <h1>404</h1>
       <p>页面未找到</p>
-      <n-button type="primary" @click="router.push('/')">返回首页</n-button>
+      <n-button type="primary" round @click="router.push('/')">返回首页</n-button>
     </div>
   </div>
 </template>
@@ -19,23 +19,24 @@ const router = useRouter()
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #f5f7fa;
+  background: #F9FAFB;
 }
 
 .error-content {
   text-align: center;
-  
+
   h1 {
-    font-size: 120px;
+    font-size: 96px;
     font-weight: 700;
-    color: #18a058;
+    color: #3B82F6;
     line-height: 1;
     margin-bottom: 16px;
+    letter-spacing: -2px;
   }
-  
+
   p {
-    font-size: 24px;
-    color: #666;
+    font-size: 18px;
+    color: #6B7280;
     margin-bottom: 32px;
   }
 }

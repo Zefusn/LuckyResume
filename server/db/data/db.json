@@ -3,11 +3,11 @@
     {
       "id": "125ee516-d037-4372-b8ad-116f23c41711",
       "phone": "13800138000",
-      "nickname": "测试用户",
-      "avatar": null,
-      "email": "test@example.com",
+      "nickname": "",
+      "avatar": "/uploads/82c277bc-7cdb-4670-93c9-5151d8908076.png",
+      "email": "",
       "createdAt": "2026-05-26T14:18:51.368Z",
-      "updatedAt": "2026-05-26T14:18:51.368Z"
+      "updatedAt": "2026-05-27T03:04:30.647Z"
     }
   ],
   "resumes": [
@@ -1081,7 +1081,7 @@
       "isPublic": false,
       "shareLink": null,
       "shareExpireAt": null,
-      "deletedAt": null,
+      "deletedAt": "2026-05-27T05:41:19.775Z",
       "createdAt": "2026-05-26T15:14:32.023Z",
       "updatedAt": "2026-05-27T02:58:24.532Z"
     },
@@ -1401,9 +1401,11 @@
       "isPublic": false,
       "shareLink": null,
       "shareExpireAt": null,
-      "deletedAt": null,
+      "deletedAt": "2026-05-27T05:40:31.936Z",
       "createdAt": "2026-05-27T02:23:54.824Z",
-      "updatedAt": "2026-05-27T02:23:54.824Z"
+      "updatedAt": "2026-05-27T05:40:30.672Z",
+      "templateColor": "#18a058",
+      "templateStyle": "default"
     },
     {
       "id": "cbe8fa67-85df-4e21-a025-14a2d247e8c2",
@@ -1441,7 +1443,7 @@
       "isPublic": false,
       "shareLink": null,
       "shareExpireAt": null,
-      "deletedAt": null,
+      "deletedAt": "2026-05-27T05:40:48.889Z",
       "createdAt": "2026-05-27T02:34:45.487Z",
       "updatedAt": "2026-05-27T02:34:45.487Z"
     },
@@ -1485,7 +1487,7 @@
       "isPublic": false,
       "shareLink": null,
       "shareExpireAt": null,
-      "deletedAt": null,
+      "deletedAt": "2026-05-27T05:40:52.654Z",
       "createdAt": "2026-05-27T02:34:46.262Z",
       "updatedAt": "2026-05-27T02:35:42.847Z"
     },
@@ -1525,7 +1527,7 @@
       "isPublic": false,
       "shareLink": null,
       "shareExpireAt": null,
-      "deletedAt": null,
+      "deletedAt": "2026-05-27T05:40:55.775Z",
       "createdAt": "2026-05-27T02:37:20.684Z",
       "updatedAt": "2026-05-27T02:37:20.684Z"
     },
@@ -1565,7 +1567,7 @@
       "isPublic": false,
       "shareLink": null,
       "shareExpireAt": null,
-      "deletedAt": null,
+      "deletedAt": "2026-05-27T05:40:58.479Z",
       "createdAt": "2026-05-27T02:39:36.541Z",
       "updatedAt": "2026-05-27T02:39:36.541Z"
     },
@@ -1639,7 +1641,7 @@
       "isPublic": false,
       "shareLink": null,
       "shareExpireAt": null,
-      "deletedAt": null,
+      "deletedAt": "2026-05-27T05:41:01.582Z",
       "createdAt": "2026-05-27T02:39:51.783Z",
       "updatedAt": "2026-05-27T02:41:33.489Z"
     },
@@ -1679,7 +1681,7 @@
       "isPublic": false,
       "shareLink": null,
       "shareExpireAt": null,
-      "deletedAt": null,
+      "deletedAt": "2026-05-27T05:41:05.814Z",
       "createdAt": "2026-05-27T02:47:59.789Z",
       "updatedAt": "2026-05-27T02:47:59.789Z"
     },
@@ -1719,7 +1721,7 @@
       "isPublic": false,
       "shareLink": null,
       "shareExpireAt": null,
-      "deletedAt": null,
+      "deletedAt": "2026-05-27T05:41:08.670Z",
       "createdAt": "2026-05-27T02:48:22.467Z",
       "updatedAt": "2026-05-27T02:48:22.467Z"
     },
@@ -1759,7 +1761,7 @@
       "isPublic": false,
       "shareLink": null,
       "shareExpireAt": null,
-      "deletedAt": null,
+      "deletedAt": "2026-05-27T05:41:11.342Z",
       "createdAt": "2026-05-27T02:50:36.242Z",
       "updatedAt": "2026-05-27T02:50:36.242Z"
     },
@@ -1799,7 +1801,7 @@
       "isPublic": false,
       "shareLink": null,
       "shareExpireAt": null,
-      "deletedAt": null,
+      "deletedAt": "2026-05-27T05:41:15.053Z",
       "createdAt": "2026-05-27T02:55:17.240Z",
       "updatedAt": "2026-05-27T02:55:17.240Z"
     },
@@ -1839,9 +1841,345 @@
       "isPublic": false,
       "shareLink": null,
       "shareExpireAt": null,
-      "deletedAt": null,
+      "deletedAt": "2026-05-27T05:41:17.559Z",
       "createdAt": "2026-05-27T02:55:44.486Z",
       "updatedAt": "2026-05-27T02:55:58.547Z"
+    },
+    {
+      "id": "d00594c1-014f-4145-a623-080a402a8e3a",
+      "userId": "125ee516-d037-4372-b8ad-116f23c41711",
+      "title": "未命名简历",
+      "templateId": "default",
+      "templateColor": "#18a058",
+      "templateStyle": "default",
+      "content": {
+        "basic": {
+          "name": "",
+          "gender": "",
+          "birthDate": "",
+          "phone": "",
+          "email": "",
+          "location": "",
+          "workYears": 0
+        },
+        "intention": {
+          "position": "",
+          "city": "",
+          "salary": "",
+          "jobType": "",
+          "industry": ""
+        },
+        "education": [],
+        "work": [],
+        "project": [],
+        "awards": [],
+        "skills": [],
+        "training": [],
+        "selfEvaluation": "",
+        "hobbies": [],
+        "languages": [],
+        "portfolio": []
+      },
+      "isPublic": false,
+      "shareLink": null,
+      "shareExpireAt": null,
+      "deletedAt": "2026-05-27T05:41:22.615Z",
+      "createdAt": "2026-05-27T03:26:52.970Z",
+      "updatedAt": "2026-05-27T03:26:52.970Z"
+    },
+    {
+      "id": "4681c435-18bd-4998-b158-7cd47f25a493",
+      "userId": "125ee516-d037-4372-b8ad-116f23c41711",
+      "title": "未命名简历",
+      "templateId": "default",
+      "templateColor": "#18a058",
+      "templateStyle": "default",
+      "content": {
+        "basic": {
+          "name": "",
+          "gender": "",
+          "birthDate": "",
+          "phone": "",
+          "email": "",
+          "location": "",
+          "workYears": 0
+        },
+        "intention": {
+          "position": "",
+          "city": "",
+          "salary": "",
+          "jobType": "",
+          "industry": ""
+        },
+        "education": [],
+        "work": [],
+        "project": [],
+        "awards": [],
+        "skills": [],
+        "training": [],
+        "selfEvaluation": "",
+        "hobbies": [],
+        "languages": [],
+        "portfolio": []
+      },
+      "isPublic": false,
+      "shareLink": null,
+      "shareExpireAt": null,
+      "deletedAt": "2026-05-27T05:41:25.430Z",
+      "createdAt": "2026-05-27T03:28:44.547Z",
+      "updatedAt": "2026-05-27T03:28:44.547Z"
+    },
+    {
+      "id": "5ee3656b-f2ab-48a9-80fe-e332c2343458",
+      "userId": "125ee516-d037-4372-b8ad-116f23c41711",
+      "title": "未命名简历",
+      "templateId": "default",
+      "templateColor": "#18a058",
+      "templateStyle": "default",
+      "content": {
+        "basic": {
+          "name": "",
+          "gender": "",
+          "birthDate": "",
+          "phone": "",
+          "email": "",
+          "location": "",
+          "workYears": 0
+        },
+        "intention": {
+          "position": "",
+          "city": "",
+          "salary": "",
+          "jobType": "",
+          "industry": ""
+        },
+        "education": [],
+        "work": [],
+        "project": [],
+        "awards": [],
+        "skills": [],
+        "training": [],
+        "selfEvaluation": "",
+        "hobbies": [],
+        "languages": [],
+        "portfolio": []
+      },
+      "isPublic": false,
+      "shareLink": null,
+      "shareExpireAt": null,
+      "deletedAt": "2026-05-27T05:41:28.198Z",
+      "createdAt": "2026-05-27T03:35:36.166Z",
+      "updatedAt": "2026-05-27T03:35:36.166Z"
+    },
+    {
+      "id": "bcfadefd-12c4-4e22-a265-23be472ba598",
+      "userId": "125ee516-d037-4372-b8ad-116f23c41711",
+      "title": "未命名简历",
+      "templateId": "default",
+      "templateColor": "#18a058",
+      "templateStyle": "default",
+      "content": {
+        "basic": {
+          "name": "",
+          "gender": "",
+          "birthDate": "",
+          "phone": "",
+          "email": "",
+          "location": "",
+          "workYears": 0
+        },
+        "intention": {
+          "position": "",
+          "city": "",
+          "salary": "",
+          "jobType": "",
+          "industry": ""
+        },
+        "education": [],
+        "work": [],
+        "project": [],
+        "awards": [],
+        "skills": [],
+        "training": [],
+        "selfEvaluation": "",
+        "hobbies": [],
+        "languages": [],
+        "portfolio": []
+      },
+      "isPublic": false,
+      "shareLink": null,
+      "shareExpireAt": null,
+      "deletedAt": "2026-05-27T05:40:44.350Z",
+      "createdAt": "2026-05-27T03:42:04.038Z",
+      "updatedAt": "2026-05-27T03:43:28.750Z"
+    },
+    {
+      "id": "b7a036ec-5897-4847-a6ea-db3e221e055b",
+      "userId": "125ee516-d037-4372-b8ad-116f23c41711",
+      "title": "未命名简历",
+      "templateId": "default",
+      "templateColor": "#10B981",
+      "templateStyle": "default",
+      "content": {
+        "basic": {
+          "name": "",
+          "gender": "",
+          "birthDate": "",
+          "phone": "",
+          "email": "",
+          "location": "",
+          "workYears": 0
+        },
+        "intention": {
+          "position": "",
+          "city": "",
+          "salary": "",
+          "jobType": "",
+          "industry": ""
+        },
+        "education": [],
+        "work": [],
+        "project": [],
+        "awards": [],
+        "skills": [],
+        "training": [],
+        "selfEvaluation": "",
+        "hobbies": [],
+        "languages": [],
+        "portfolio": []
+      },
+      "isPublic": false,
+      "shareLink": null,
+      "shareExpireAt": null,
+      "deletedAt": "2026-05-27T05:40:41.446Z",
+      "createdAt": "2026-05-27T03:45:42.093Z",
+      "updatedAt": "2026-05-27T03:45:51.463Z"
+    },
+    {
+      "id": "d33750e3-f006-4015-b0be-b9d0fa412794",
+      "userId": "125ee516-d037-4372-b8ad-116f23c41711",
+      "title": "未命名简历",
+      "templateId": "default",
+      "templateColor": "#18a058",
+      "templateStyle": "default",
+      "content": {
+        "basic": {
+          "name": "",
+          "gender": "",
+          "birthDate": "",
+          "phone": "",
+          "email": "",
+          "location": "",
+          "workYears": 0
+        },
+        "intention": {
+          "position": "",
+          "city": "",
+          "salary": "",
+          "jobType": "",
+          "industry": ""
+        },
+        "education": [],
+        "work": [],
+        "project": [],
+        "awards": [],
+        "skills": [],
+        "training": [],
+        "selfEvaluation": "",
+        "hobbies": [],
+        "languages": [],
+        "portfolio": []
+      },
+      "isPublic": false,
+      "shareLink": null,
+      "shareExpireAt": null,
+      "deletedAt": "2026-05-27T05:40:38.934Z",
+      "createdAt": "2026-05-27T05:29:46.892Z",
+      "updatedAt": "2026-05-27T05:32:31.300Z"
+    },
+    {
+      "id": "56bccdba-d639-455d-a9d5-c5f884e24192",
+      "userId": "125ee516-d037-4372-b8ad-116f23c41711",
+      "title": "未命名简历",
+      "templateId": "default",
+      "templateColor": "#18a058",
+      "templateStyle": "default",
+      "content": {
+        "basic": {
+          "name": "",
+          "gender": "",
+          "birthDate": "",
+          "phone": "",
+          "email": "",
+          "location": "",
+          "workYears": 0
+        },
+        "intention": {
+          "position": "",
+          "city": "",
+          "salary": "",
+          "jobType": "",
+          "industry": ""
+        },
+        "education": [],
+        "work": [],
+        "project": [],
+        "awards": [],
+        "skills": [],
+        "training": [],
+        "selfEvaluation": "",
+        "hobbies": [],
+        "languages": [],
+        "portfolio": []
+      },
+      "isPublic": false,
+      "shareLink": null,
+      "shareExpireAt": null,
+      "deletedAt": "2026-05-27T05:40:36.566Z",
+      "createdAt": "2026-05-27T05:38:38.352Z",
+      "updatedAt": "2026-05-27T05:38:41.431Z"
+    },
+    {
+      "id": "da8ecf9c-3725-4edf-9d25-01d24b07d475",
+      "userId": "125ee516-d037-4372-b8ad-116f23c41711",
+      "title": "未命名简历",
+      "templateId": "default",
+      "templateColor": "#18a058",
+      "templateStyle": "default",
+      "content": {
+        "basic": {
+          "name": "",
+          "gender": "",
+          "birthDate": "",
+          "phone": "",
+          "email": "",
+          "location": "",
+          "workYears": 0
+        },
+        "intention": {
+          "position": "",
+          "city": "",
+          "salary": "",
+          "jobType": "",
+          "industry": ""
+        },
+        "education": [],
+        "work": [],
+        "project": [],
+        "awards": [],
+        "skills": [],
+        "training": [],
+        "selfEvaluation": "",
+        "hobbies": [],
+        "languages": [],
+        "portfolio": []
+      },
+      "isPublic": false,
+      "shareLink": null,
+      "shareExpireAt": null,
+      "deletedAt": "2026-05-27T05:40:34.167Z",
+      "createdAt": "2026-05-27T05:39:40.327Z",
+      "updatedAt": "2026-05-27T05:39:56.625Z"
     }
   ],
   "templates": [],

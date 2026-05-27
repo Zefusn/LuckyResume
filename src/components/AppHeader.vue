@@ -1,47 +1,34 @@
 <template>
-  <header class="app-header">
-    <div class="header-content">
+  <header class="nav">
+    <div class="nav-inner">
       <div class="logo" @click="router.push('/')">
-        <n-icon size="28" color="#18a058">
-          <DocumentTextOutline />
-        </n-icon>
-        <span class="logo-text">幸运简历</span>
+        <div class="logo-mark">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <path d="M4 4h16v16H4V4z" fill="white" opacity="0.3"/>
+            <path d="M7 8h10M7 12h8M7 16h6" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <span class="logo-text">LuckyResume</span>
       </div>
-      
-      <nav class="nav-menu">
-        <router-link to="/" class="nav-item" :class="{ active: route.path === '/' }">
-          首页
-        </router-link>
-        <router-link to="/templates" class="nav-item" :class="{ active: route.path.startsWith('/templates') }">
-          模板中心
-        </router-link>
+
+      <nav class="nav-links">
+        <router-link to="/" class="nav-link" :class="{ active: route.path === '/' }">首页</router-link>
+        <router-link to="/templates" class="nav-link" :class="{ active: route.path.startsWith('/templates') }">模板中心</router-link>
       </nav>
 
-      <div class="header-actions">
+      <div class="nav-actions">
         <template v-if="userStore.isLoggedIn">
-          <n-button type="primary" @click="router.push('/editor')">
-            <template #icon>
-              <n-icon><AddOutline /></n-icon>
-            </template>
+          <n-button type="primary" round size="small" class="btn-create" @click="router.push('/editor')">
             创建简历
           </n-button>
-          
-          <n-dropdown :options="userMenuOptions" @select="handleUserMenuSelect">
-            <div class="user-avatar">
-              <n-avatar 
-                :size="36" 
-                :src="userStore.userInfo?.avatar" 
-                round
-              >
-                {{ userStore.userInfo?.nickname?.charAt(0) || 'U' }}
-              </n-avatar>
-            </div>
+          <n-dropdown :options="menuOpts" @select="onMenu">
+            <n-avatar :size="30" :src="userStore.userInfo?.avatar" round class="nav-avatar">
+              {{ userStore.userInfo?.nickname?.charAt(0) || 'U' }}
+            </n-avatar>
           </n-dropdown>
         </template>
-        
         <template v-else>
-          <n-button @click="router.push('/login')">登录</n-button>
-          <n-button type="primary" @click="router.push('/login')">注册</n-button>
+          <n-button type="primary" round size="small" class="btn-create" @click="router.push('/login')">创建简历</n-button>
         </template>
       </div>
     </div>
@@ -52,67 +39,43 @@
 import { h } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
 import { NIcon } from 'naive-ui'
-import { DocumentTextOutline, AddOutline, PersonOutline, SettingsOutline, LogOutOutline } from '@vicons/ionicons5'
+import { PersonOutline, SettingsOutline, LogOutOutline } from '@vicons/ionicons5'
 import { useUserStore } from '@/stores/user'
 
 const router = useRouter()
 const route = useRoute()
 const userStore = useUserStore()
 
-const userMenuOptions = [
-  {
-    label: '个人中心',
-    key: 'user',
-    icon: () => h(NIcon, null, { default: () => h(PersonOutline) })
-  },
-  {
-    label: '账号设置',
-    key: 'settings',
-    icon: () => h(NIcon, null, { default: () => h(SettingsOutline) })
-  },
-  {
-    type: 'divider',
-    key: 'd1'
-  },
-  {
-    label: '退出登录',
-    key: 'logout',
-    icon: () => h(NIcon, null, { default: () => h(LogOutOutline) })
-  }
+const menuOpts = [
+  { label: '个人中心', key: 'user', icon: () => h(NIcon, null, { default: () => h(PersonOutline) }) },
+  { label: '账号设置', key: 'settings', icon: () => h(NIcon, null, { default: () => h(SettingsOutline) }) },
+  { type: 'divider', key: 'd1' },
+  { label: '退出登录', key: 'logout', icon: () => h(NIcon, null, { default: () => h(LogOutOutline) }) }
 ]
 
-function handleUserMenuSelect(key: string) {
-  switch (key) {
-    case 'user':
-      router.push('/user')
-      break
-    case 'settings':
-      router.push('/user/settings')
-      break
-    case 'logout':
-      userStore.logout()
-      router.push('/')
-      break
-  }
+function onMenu(key: string) {
+  if (key === 'user') router.push('/user')
+  else if (key === 'settings') router.push('/user/settings')
+  else if (key === 'logout') { userStore.logout(); router.push('/') }
 }
 </script>
 
 <style lang="scss" scoped>
-.app-header {
+.nav {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  height: 60px;
-  background: #fff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  height: $header-h;
+  background: $bg-nav;
+  border-bottom: 0.5px solid $border-subtle;
   z-index: 100;
 }
 
-.header-content {
-  max-width: 1200px;
+.nav-inner {
+  max-width: $max-w;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 $pad-section;
   height: 100%;
   display: flex;
   align-items: center;
@@ -122,43 +85,94 @@ function handleUserMenuSelect(key: string) {
 .logo {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   cursor: pointer;
-  
-  .logo-text {
-    font-size: 20px;
-    font-weight: 600;
-    color: #333;
+  user-select: none;
+
+  &:hover .logo-mark {
+    transform: rotate(-4deg) scale(1.05);
   }
 }
 
-.nav-menu {
+.logo-mark {
+  width: 30px;
+  height: 30px;
+  border-radius: $r-sm;
+  background: linear-gradient(135deg, $blue 0%, #8B5CF6 100%);
   display: flex;
-  gap: 32px;
-  
-  .nav-item {
-    color: #666;
-    font-size: 15px;
-    padding: 8px 0;
-    border-bottom: 2px solid transparent;
-    transition: all 0.2s;
-    
-    &:hover, &.active {
-      color: #18a058;
-      border-bottom-color: #18a058;
-    }
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.logo-text {
+  font-size: 17px;
+  font-weight: 700;
+  color: $text-title;
+  letter-spacing: -0.5px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 4px;
+}
+
+.nav-link {
+  padding: 6px 14px;
+  border-radius: $r-nav;
+  font-size: 14px;
+  font-weight: 400;
+  color: $text-muted;
+  transition: all 0.2s $ease;
+
+  &:hover {
+    color: $text-body;
+    background: $gray-50;
+  }
+
+  &.active {
+    color: $text-title;
+    font-weight: 500;
   }
 }
 
-.header-actions {
+.nav-actions {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
 }
 
-.user-avatar {
+.btn-create {
+  background: $blue;
+  border-color: $blue;
+  font-weight: 500;
+  font-size: 14px;
+  padding: 0 20px;
+  height: 34px;
+
+  &:hover {
+    background: $blue-hover;
+    border-color: $blue-hover;
+    transform: scale(1.02);
+  }
+}
+
+.nav-avatar {
   cursor: pointer;
-  display: flex;
-  align-items: center;
+  transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .nav-inner {
+    padding: 0 16px;
+  }
 }
 </style>

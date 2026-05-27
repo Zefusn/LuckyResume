@@ -161,7 +161,7 @@ function removeAvatar() {
   transition: border-color 0.3s;
 
   &:hover {
-    border-color: #18a058;
+    border-color: #3B82F6;
 
     .avatar-overlay {
       opacity: 1;

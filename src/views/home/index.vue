@@ -1,91 +1,89 @@
 <template>
-  <div class="home-page">
-    <!-- Hero Section -->
-    <section class="hero-section">
-      <div class="hero-content">
+  <div class="page">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-inner">
         <h1 class="hero-title">
-          智能简历制作
-          <span class="highlight">轻松求职</span>
+          做一份好简历<br /><span class="accent">没那么难</span>
         </h1>
-        <p class="hero-desc">
-          专业模板 · 实时预览 · 一键导出
-          <br />
-          助你打造完美简历
-        </p>
+        <p class="hero-sub">选模板、填内容、导出 PDF，三步搞定</p>
         <div class="hero-actions">
-          <n-button type="primary" size="large" @click="handleCreateResume">
-            <template #icon>
-              <n-icon><AddOutline /></n-icon>
-            </template>
-            免费创建简历
-          </n-button>
-          <n-button size="large" @click="router.push('/templates')">
-            浏览模板
+          <n-button type="primary" round size="large" class="btn-main" @click="handleCreate">
+            免费开始制作
           </n-button>
         </div>
-      </div>
-      
-      <div class="hero-image">
-        <img src="@/assets/images/hero-resume.svg" alt="简历预览" />
-      </div>
-    </section>
-    
-    <!-- Features Section -->
-    <section class="features-section">
-      <h2 class="section-title">核心功能</h2>
-      <div class="features-grid">
-        <div class="feature-card" v-for="feature in features" :key="feature.title">
-          <div class="feature-icon" :style="{ background: feature.color }">
-            <n-icon size="28" color="#fff">
-              <component :is="feature.icon" />
-            </n-icon>
-          </div>
-          <h3>{{ feature.title }}</h3>
-          <p>{{ feature.desc }}</p>
-        </div>
-      </div>
-    </section>
-    
-    <!-- Templates Preview Section -->
-    <section class="templates-section">
-      <div class="section-header">
-        <h2 class="section-title">热门模板</h2>
-        <n-button text type="primary" @click="router.push('/templates')">
-          查看更多
-          <template #icon>
-            <n-icon><ArrowForwardOutline /></n-icon>
-          </template>
-        </n-button>
-      </div>
-      
-      <div class="templates-grid">
-        <div 
-          class="template-card" 
-          v-for="template in hotTemplates" 
-          :key="template.id"
-          @click="router.push(`/templates/${template.id}`)"
-        >
-          <div class="template-preview">
-            <img :src="getTemplateThumbnail(template.thumbnail)" :alt="template.name" />
-          </div>
-          <div class="template-info">
-            <h4>{{ template.name }}</h4>
-            <div class="template-meta">
-              <n-tag size="small" :bordered="false">{{ template.style }}</n-tag>
+
+        <div class="hero-visual">
+          <div class="visual-card left">
+            <div class="mock-row">
+              <div class="mock-circle"></div>
+              <div class="mock-stack"><div class="bar w-50"></div><div class="bar w-30"></div></div>
             </div>
+            <div class="mock-divider"></div>
+            <div class="bar w-100"></div>
+            <div class="bar w-80"></div>
+            <div class="bar w-90"></div>
+            <div class="mock-divider"></div>
+            <div class="bar w-70"></div>
+            <div class="bar w-100"></div>
+            <div class="bar w-60"></div>
+          </div>
+          <div class="visual-card center">
+            <div class="mock-row">
+              <div class="mock-circle lg"></div>
+              <div class="mock-stack"><div class="bar w-60"></div><div class="bar w-40"></div></div>
+            </div>
+            <div class="mock-divider"></div>
+            <div class="bar w-100"></div>
+            <div class="bar w-90"></div>
+            <div class="bar w-80"></div>
+            <div class="mock-divider"></div>
+            <div class="bar w-100"></div>
+            <div class="bar w-70"></div>
+            <div class="bar w-90"></div>
+            <div class="mock-divider"></div>
+            <div class="bar w-80"></div>
+            <div class="bar w-100"></div>
+          </div>
+          <div class="visual-card right">
+            <div class="mock-row">
+              <div class="mock-circle"></div>
+              <div class="mock-stack"><div class="bar w-50"></div><div class="bar w-40"></div></div>
+            </div>
+            <div class="mock-divider"></div>
+            <div class="bar w-90"></div>
+            <div class="bar w-100"></div>
+            <div class="bar w-70"></div>
+            <div class="mock-divider"></div>
+            <div class="bar w-80"></div>
+            <div class="bar w-60"></div>
           </div>
         </div>
       </div>
     </section>
-    
-    <!-- CTA Section -->
-    <section class="cta-section">
-      <div class="cta-content">
-        <h2>开始制作你的简历</h2>
-        <p>选择模板，填写内容，即可生成专业简历</p>
-        <n-button type="primary" size="large" @click="handleCreateResume">
-          立即开始
-        </n-button>
+
+    <!-- Templates -->
+    <section class="templates">
+      <div class="tpl-inner">
+        <div class="tpl-head">
+          <h2>精选模板</h2>
+          <n-button text type="primary" class="tpl-link" @click="router.push('/templates')">
+            查看全部
+          </n-button>
+        </div>
+        <div class="tpl-grid">
+          <div
+            class="tpl-card"
+            v-for="tpl in hotTemplates"
+            :key="tpl.id"
+            @click="router.push(`/templates/${tpl.id}`)"
+          >
+            <div class="tpl-thumb">
+              <img :src="getThumb(tpl.thumbnail)" :alt="tpl.name" />
+            </div>
+            <div class="tpl-name">{{ tpl.name }}</div>
+          </div>
+        </div>
       </div>
     </section>
   </div>
@@ -94,267 +92,285 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
-import { 
-  AddOutline, 
-  ArrowForwardOutline,
-  DocumentTextOutline,
-  ColorPaletteOutline,
-  BulbOutline,
-  CloudDownloadOutline
-} from '@vicons/ionicons5'
 import { useUserStore } from '@/stores/user'
 import { templateApi } from '@/api/template'
 import type { Template } from '@/types'
 
 const router = useRouter()
 const userStore = useUserStore()
-
 const hotTemplates = ref<Template[]>([])
 
 async function fetchHotTemplates() {
   try {
     const data = await templateApi.getList({ limit: 4, sort: 'popular' })
     hotTemplates.value = data.list
-  } catch (error) {
-    console.error('获取模板失败', error)
-  }
+  } catch (e) { console.error(e) }
 }
 
-onMounted(() => {
-  fetchHotTemplates()
-})
+onMounted(() => fetchHotTemplates())
 
-const features = [
-  {
-    title: '专业模板',
-    desc: '多款精心设计的简历模板，适配不同行业和岗位',
-    icon: DocumentTextOutline,
-    color: '#18a058'
-  },
-  {
-    title: '实时预览',
-    desc: '编辑过程中实时查看最终效果，所见即所得',
-    icon: ColorPaletteOutline,
-    color: '#2080f0'
-  },
-  {
-    title: '智能优化',
-    desc: 'AI 辅助润色内容，诊断简历问题，提升质量',
-    icon: BulbOutline,
-    color: '#f0a020'
-  },
-  {
-    title: '多格式导出',
-    desc: '支持 PDF、Word、图片等多种格式导出下载',
-    icon: CloudDownloadOutline,
-    color: '#d03050'
-  }
-]
-
-function getTemplateThumbnail(thumbnail: string) {
-  if (!thumbnail) return ''
-  if (thumbnail.startsWith('http')) return thumbnail
-  return `http://localhost:3001${thumbnail}`
+function getThumb(t: string) {
+  if (!t) return ''
+  if (t.startsWith('http')) return t
+  return `http://localhost:3001${t}`
 }
 
-function handleCreateResume() {
-  if (userStore.isLoggedIn) {
-    router.push('/editor')
-  } else {
-    router.push('/login')
-  }
+function handleCreate() {
+  router.push(userStore.isLoggedIn ? '/editor' : '/login')
 }
 </script>
 
 <style lang="scss" scoped>
-.home-page {
-  overflow-x: hidden;
+.page { min-height: 100vh; }
+
+// ========== Hero ==========
+.hero {
+  padding: 140px 24px 100px;
+  text-align: center;
 }
 
-.hero-section {
-  max-width: 1200px;
+.hero-inner {
+  max-width: 640px;
   margin: 0 auto;
-  padding: 80px 24px 60px;
+}
+
+.hero-title {
+  font-size: 56px;
+  font-weight: 700;
+  color: $text-title;
+  line-height: 1.1;
+  letter-spacing: -2px;
+  margin-bottom: 20px;
+
+  .accent {
+    background: linear-gradient(135deg, $blue, #8B5CF6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+.hero-sub {
+  font-size: 18px;
+  color: $text-muted;
+  margin-bottom: 40px;
+  font-weight: 400;
+}
+
+.hero-actions {
+  margin-bottom: 80px;
+}
+
+.btn-main {
+  background: $blue !important;
+  border-color: $blue !important;
+  font-weight: 500;
+  height: 50px;
+  padding: 0 36px;
+  font-size: 16px;
+
+  &:hover {
+    background: $blue-hover !important;
+    border-color: $blue-hover !important;
+    transform: scale(1.02);
+  }
+}
+
+// Visual cards
+.hero-visual {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  perspective: 900px;
+}
+
+.visual-card {
+  width: 220px;
+  background: $white;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.04);
+  border: 1px solid $gray-100;
+  transition: all 0.5s $ease;
+
+  &.left {
+    transform: rotateY(8deg) translateX(-10px) translateY(20px);
+    opacity: 0.5;
+  }
+
+  &.center {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.08);
+    z-index: 2;
+    width: 240px;
+  }
+
+  &.right {
+    transform: rotateY(-8deg) translateX(10px) translateY(20px);
+    opacity: 0.5;
+  }
+}
+
+.mock-row {
   display: flex;
   align-items: center;
-  gap: 60px;
+  gap: 10px;
+  margin-bottom: 14px;
 }
 
-.hero-content {
+.mock-circle {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: $blue-light;
+  flex-shrink: 0;
+
+  &.lg {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+.mock-stack {
   flex: 1;
-  
-  .hero-title {
-    font-size: 48px;
-    font-weight: 700;
-    line-height: 1.2;
-    margin-bottom: 20px;
-    
-    .highlight {
-      color: #18a058;
-    }
-  }
-  
-  .hero-desc {
-    font-size: 18px;
-    color: #666;
-    line-height: 1.8;
-    margin-bottom: 32px;
-  }
-  
-  .hero-actions {
-    display: flex;
-    gap: 16px;
-  }
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
-.hero-image {
-  flex: 1;
-  
-  img {
-    width: 100%;
-    max-width: 500px;
-    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.1));
-  }
+.bar {
+  height: 5px;
+  border-radius: 3px;
+  background: $gray-100;
+
+  &.w-30 { width: 30%; }
+  &.w-40 { width: 40%; }
+  &.w-50 { width: 50%; }
+  &.w-60 { width: 60%; }
+  &.w-70 { width: 70%; }
+  &.w-80 { width: 80%; }
+  &.w-90 { width: 90%; }
+  &.w-100 { width: 100%; }
 }
 
-.features-section {
-  background: #fff;
-  padding: 80px 24px;
-  
-  .section-title {
-    text-align: center;
+.mock-divider {
+  height: 1px;
+  background: $gray-100;
+  margin: 12px 0;
+}
+
+// ========== Templates ==========
+.templates {
+  padding: 0 24px 100px;
+}
+
+.tpl-inner {
+  max-width: $max-w;
+  margin: 0 auto;
+}
+
+.tpl-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 32px;
+
+  h2 {
     font-size: 28px;
     font-weight: 600;
-    margin-bottom: 48px;
+    color: $text-title;
+    letter-spacing: -0.5px;
   }
 }
 
-.features-grid {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-}
+.tpl-link {
+  font-size: 15px;
+  color: $blue !important;
+  font-weight: 400;
 
-.feature-card {
-  padding: 28px;
-  border-radius: 12px;
-  background: #f8f9fa;
-  text-align: center;
-  transition: transform 0.2s, box-shadow 0.2s;
-  
   &:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
-  }
-  
-  .feature-icon {
-    width: 56px;
-    height: 56px;
-    border-radius: 14px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 16px;
-  }
-  
-  h3 {
-    font-size: 16px;
-    margin-bottom: 8px;
-  }
-  
-  p {
-    color: #666;
-    font-size: 13px;
-    line-height: 1.6;
+    text-decoration: underline;
   }
 }
 
-.templates-section {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 80px 24px;
-  
-  .section-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 32px;
-  }
-  
-  .section-title {
-    font-size: 28px;
-    font-weight: 600;
-  }
-}
-
-.templates-grid {
+.tpl-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
 }
 
-.template-card {
-  background: #fff;
-  border-radius: 12px;
-  overflow: hidden;
+.tpl-card {
   cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s;
-  border: 1px solid #eee;
-  
+  transition: all 0.3s $ease;
+
   &:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
-  }
-  
-  .template-preview {
-    height: 240px;
-    background: #f5f7fa;
-    
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  }
-  
-  .template-info {
-    padding: 14px;
-    
-    h4 {
-      font-size: 14px;
-      margin-bottom: 8px;
-    }
-    
-    .template-meta {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    transform: translateY(-6px);
+    .tpl-thumb {
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
     }
   }
 }
 
-.cta-section {
-  background: linear-gradient(135deg, #f8f9fa 0%, #e8f5e9 100%);
-  padding: 80px 24px;
+.tpl-thumb {
+  border-radius: 16px;
+  overflow: hidden;
+  background: $gray-50;
+  height: 280px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+  transition: box-shadow 0.3s $ease;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.tpl-name {
+  font-size: 15px;
+  font-weight: 500;
+  color: $text-body;
+  padding: 14px 0;
   text-align: center;
 }
 
-.cta-content {
-  max-width: 600px;
-  margin: 0 auto;
-  
-  h2 {
-    font-size: 28px;
-    font-weight: 600;
-    margin-bottom: 12px;
+// ========== Responsive ==========
+@media (max-width: 768px) {
+  .hero {
+    padding: 100px 20px 60px;
   }
-  
-  p {
-    color: #666;
+
+  .hero-title {
+    font-size: 36px;
+    letter-spacing: -1px;
+  }
+
+  .hero-sub {
     font-size: 16px;
-    margin-bottom: 24px;
+  }
+
+  .hero-visual {
+    display: none;
+  }
+
+  .hero-actions {
+    margin-bottom: 0;
+  }
+
+  .templates {
+    padding: 0 20px 60px;
+  }
+
+  .tpl-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .tpl-thumb {
+    height: 200px;
+  }
+
+  .tpl-head h2 {
+    font-size: 22px;
   }
 }
 </style>

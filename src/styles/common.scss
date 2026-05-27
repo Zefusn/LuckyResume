@@ -1,55 +1,24 @@
 .container {
-  max-width: 1200px;
+  max-width: $max-w;
   margin: 0 auto;
-  padding: 0 $spacing-lg;
+  padding: 0 $pad-section;
 }
 
-.page-header {
-  font-size: 24px;
-  font-weight: 600;
-  color: $text-primary;
-  margin-bottom: $spacing-lg;
-}
+// 按钮动效 - iOS 原生顺滑
+.n-button {
+  transition: all 0.2s $ease !important;
 
-.card {
-  background: $bg-primary;
-  border-radius: $border-radius-lg;
-  box-shadow: $box-shadow;
-  padding: $spacing-lg;
-}
-
-.btn-primary {
-  background: $primary-color;
-  color: white;
-  border: none;
-  border-radius: $border-radius;
-  padding: $spacing-sm $spacing-md;
-  cursor: pointer;
-  transition: background 0.2s;
-  
-  &:hover {
-    background: $primary-hover;
-  }
-  
   &:active {
-    background: $primary-pressed;
+    transform: scale(0.98);
   }
 }
 
-.text-ellipsis {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
+// 卡片悬浮 - 轻微上浮
+.card-hover {
+  transition: all 0.25s $ease;
 
-.flex-center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.flex-between {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  }
 }

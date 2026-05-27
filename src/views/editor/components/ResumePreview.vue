@@ -251,7 +251,7 @@
         </div>
         <div class="portfolio-list">
           <div v-for="p in content.portfolio" :key="p.id" class="portfolio-item">
-            <n-icon size="14" color="#18a058"><FolderOpenOutline /></n-icon>
+            <n-icon size="14" color="#3B82F6"><FolderOpenOutline /></n-icon>
             <span class="portfolio-title">{{ p.title }}</span>
             <a v-if="p.url" :href="p.url" class="portfolio-link" target="_blank">{{ p.url }}</a>
           </div>
@@ -286,7 +286,7 @@ const props = defineProps<{
   templateStyle?: string
 }>()
 
-const primaryColor = computed(() => props.color || '#18a058')
+const primaryColor = computed(() => props.color || '#3B82F6')
 
 const colorVars = computed(() => ({
   '--primary-color': primaryColor.value,
@@ -335,7 +335,7 @@ function getSkillLevelText(level: number): string {
 .resume-header {
   margin-bottom: 20px;
   padding-bottom: 18px;
-  border-bottom: 2px solid var(--primary-color, #18a058);
+  border-bottom: 2px solid var(--primary-color, #3B82F6);
 }
 
 .header-content {
@@ -384,7 +384,7 @@ function getSkillLevelText(level: number): string {
 
   .job-title {
     font-size: 14px;
-    color: var(--primary-color, #18a058);
+    color: var(--primary-color, #3B82F6);
     font-weight: 500;
   }
 
@@ -423,7 +423,7 @@ function getSkillLevelText(level: number): string {
   gap: 6px;
   font-size: 15px;
   font-weight: 600;
-  color: var(--primary-color, #18a058);
+  color: var(--primary-color, #3B82F6);
   padding-bottom: 8px;
   border-bottom: 1px solid var(--primary-border, #e8f5e9);
   margin-bottom: 12px;
@@ -475,7 +475,7 @@ function getSkillLevelText(level: number): string {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: var(--primary-color, #18a058);
+  background: var(--primary-color, #3B82F6);
   margin-top: 6px;
   flex-shrink: 0;
   position: relative;
@@ -520,7 +520,7 @@ function getSkillLevelText(level: number): string {
 }
 
 .item-position {
-  color: var(--primary-color, #18a058);
+  color: var(--primary-color, #3B82F6);
   font-size: 13px;
   font-weight: 500;
   margin-bottom: 4px;
@@ -541,7 +541,7 @@ function getSkillLevelText(level: number): string {
   border-radius: 3px;
 
   &.highlight {
-    color: var(--primary-color, #18a058);
+    color: var(--primary-color, #3B82F6);
     background: var(--primary-light, #e8f5e9);
   }
 }
@@ -569,7 +569,7 @@ function getSkillLevelText(level: number): string {
       content: '▸';
       position: absolute;
       left: 0;
-      color: var(--primary-color, #18a058);
+      color: var(--primary-color, #3B82F6);
     }
   }
 }
@@ -617,7 +617,7 @@ function getSkillLevelText(level: number): string {
 
   .skill-fill {
     height: 100%;
-    background: linear-gradient(90deg, var(--primary-color, #18a058), var(--primary-color, #36ad6a));
+    background: linear-gradient(90deg, var(--primary-color, #3B82F6), var(--primary-color, #60A5FA));
     border-radius: 3px;
     transition: width 0.3s ease;
   }
@@ -694,7 +694,7 @@ function getSkillLevelText(level: number): string {
 
   .lang-level {
     font-size: 12px;
-    color: var(--primary-color, #18a058);
+    color: var(--primary-color, #3B82F6);
   }
 
   .lang-cert {
@@ -748,7 +748,7 @@ function getSkillLevelText(level: number): string {
 
   .portfolio-link {
     font-size: 12px;
-    color: var(--primary-color, #18a058);
+    color: var(--primary-color, #3B82F6);
     text-decoration: none;
 
     &:hover {
@@ -781,7 +781,7 @@ function getSkillLevelText(level: number): string {
 // 模板样式变体
 .template-classic {
   .resume-header {
-    border-bottom: 3px double var(--primary-color, #18a058);
+    border-bottom: 3px double var(--primary-color, #3B82F6);
   }
 
   .section-title {
