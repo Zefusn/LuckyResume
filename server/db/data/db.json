@@ -1054,11 +1054,11 @@
         "basic": {
           "name": "",
           "gender": "",
-          "birthDate": "",
+          "birthDate": "2026-05-14",
           "phone": "",
           "email": "",
           "location": "",
-          "workYears": 0
+          "workYears": 1
         },
         "intention": {
           "position": "",
@@ -1083,7 +1083,7 @@
       "shareExpireAt": null,
       "deletedAt": null,
       "createdAt": "2026-05-26T15:14:32.023Z",
-      "updatedAt": "2026-05-26T15:14:32.023Z"
+      "updatedAt": "2026-05-27T02:58:24.532Z"
     },
     {
       "id": "24fdcbb7-ac4f-4555-bfc9-d64b42e00b55",
@@ -1364,6 +1364,484 @@
       "deletedAt": null,
       "createdAt": "2026-05-26T15:19:36.225Z",
       "updatedAt": "2026-05-26T15:19:39.576Z"
+    },
+    {
+      "id": "b6f91e62-9dd0-4b23-8628-8a8364b7f299",
+      "userId": "125ee516-d037-4372-b8ad-116f23c41711",
+      "title": "未命名简历",
+      "templateId": "default",
+      "content": {
+        "basic": {
+          "name": "",
+          "gender": "",
+          "birthDate": "",
+          "phone": "",
+          "email": "",
+          "location": "",
+          "workYears": 0
+        },
+        "intention": {
+          "position": "",
+          "city": "",
+          "salary": "",
+          "jobType": "",
+          "industry": ""
+        },
+        "education": [],
+        "work": [],
+        "project": [],
+        "awards": [],
+        "skills": [],
+        "training": [],
+        "selfEvaluation": "",
+        "hobbies": [],
+        "languages": [],
+        "portfolio": []
+      },
+      "isPublic": false,
+      "shareLink": null,
+      "shareExpireAt": null,
+      "deletedAt": null,
+      "createdAt": "2026-05-27T02:23:54.824Z",
+      "updatedAt": "2026-05-27T02:23:54.824Z"
+    },
+    {
+      "id": "cbe8fa67-85df-4e21-a025-14a2d247e8c2",
+      "userId": "125ee516-d037-4372-b8ad-116f23c41711",
+      "title": "未命名简历",
+      "templateId": "default",
+      "content": {
+        "basic": {
+          "name": "",
+          "gender": "",
+          "birthDate": "",
+          "phone": "",
+          "email": "",
+          "location": "",
+          "workYears": 0
+        },
+        "intention": {
+          "position": "",
+          "city": "",
+          "salary": "",
+          "jobType": "",
+          "industry": ""
+        },
+        "education": [],
+        "work": [],
+        "project": [],
+        "awards": [],
+        "skills": [],
+        "training": [],
+        "selfEvaluation": "",
+        "hobbies": [],
+        "languages": [],
+        "portfolio": []
+      },
+      "isPublic": false,
+      "shareLink": null,
+      "shareExpireAt": null,
+      "deletedAt": null,
+      "createdAt": "2026-05-27T02:34:45.487Z",
+      "updatedAt": "2026-05-27T02:34:45.487Z"
+    },
+    {
+      "id": "7d4f4648-bd2a-4dc6-91af-fe7d78d1b841",
+      "userId": "125ee516-d037-4372-b8ad-116f23c41711",
+      "title": "未命名简历",
+      "templateId": "default",
+      "content": {
+        "basic": {
+          "name": "xx",
+          "gender": "male",
+          "birthDate": "2026-05-06",
+          "phone": "xx",
+          "email": "xx",
+          "location": "xx",
+          "workYears": 0,
+          "avatar": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMIAAACUCAIAAABOVGGMAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAEXRFWHRTb2Z0d2FyZQBTbmlwYXN0ZV0Xzt0AAAAXdEVYdFVzZXIgQ29tbWVudABTY3JlZW5zaG9093UNRwAADqdJREFUeJzt3X9Qk3eeB/A3RpKSKEQssetz5MJoYiux0lVxu8lhWZSuBG8LV72FZXaG7cyWLsx5LM6JTLcZ3M6qM1rHXVjZzmpmZxg6zVrYLsL2UMRy5NQUKEgYt0TXFC9WY3UTKNGALPdHnsSEBAK3Xyl4n9f4x5M8z/N9Hsw7358PGjUxMQFC/j6Lvu4bIE8CihFhgGJEGKAYEQYoRoQBihFhgGJEGKAYEQYoRoQBihFhgGJEGKAYEQYoRoQBihFhgGJEGKAYEQYoRoQBihFhgGJEGKAYEQYoRoQBihFhgGJEGKAYEQYoRoQBihFhgGJEGKAYEQYoRoQBihFhgGJEGKAYEQYoRoQBihFhgGJEGKAYEQYoRoQBihFhgGJEGKAYEQYoRoSBxXN6Nbe58oxNvuoF3SqlLMb7lrPuw32H3AAAUXZjrk4+i+JsrRfsnnhuY0JCXLxEFOZy/fW9Y6rVyeqE6EgltZRdcaq/wa0QKjLWcmGK4jlbPzY2uwFAnrhrt1oa+R7dPZVn2oaEEgAJ0vQfvaiURT5n4ZnTGA12GmucdnQ1VHRx+q2Hizh4+mornE4PACBD9dJsMgTc6j84UGvxbseX2HZoJn38jsvvFw9YMQBEiYs2ntCvnfrG7G11DhscwPLSL9ZyU19yxHq7re4+ACglut2IGKOx1o9/VeP0fksQu1hTHumEBWoOYzTcVnHdzm/H5xRywLjtaL/JmyFEJW8S9DT3TH16SD3hsVssvu0sLjWkCnE22a385oRqnWK6WxvyOL0bMnFIZTFsa/18TLkyIS5GGhczXSGhXH2/+YmDzxCiksuf5Rz3nNOfIloijRPO7irzwdzFqPNibSu/yem/qREBned+fszj2z3Rf7C3f7rzY3ZdWpsTWF113PaHLkX3bEizdcdU/5VvO16rE09X9u0H/KerEodUMNcaCnrN6AJke7/YnjBdKZPcaHi12zTkfznRX3HujYpIJ+V+873qdbO4yDwxVzH6zPCDm766fWVhEQdXX5X/nVmxmN813AUwcvme7y2Bs+njd038C0Xh9kw1YLW0dPr2q2PQ2mMKKiWobrNb+cCJlcsmx8hyb4AvJHYlMDbTu7zRsrPdaIl83BNiTmLk7inrbPF/L7c+kxz0TV2cok/Whu8VPfi08jPTIABAtIRbAQC4/WVb3Z3gw8ZtzQ6b74UmC5nq8X6D3eHfb7FXvWYPPiVm16W1OWjfs/l64A634WKe4aLvVULpF1mqy06+ono+TgZMKmUKN1p2ths6Hs7o2CfDHMRopPX8r+qC/k7tNRf931SFPm1vUSIAwG3vGLB5syVP1KiXo/PMyUH+sJR3/im09zMlxyfvG8b/7hsHMD5gGuY3P+h942wfXKP8S+vg2+vf8x+XWp1XqAUAuCyGzK6WQf8e8a723BylYIrynT0VHx0yeB4d/O9TjwPms8ceo8ELbxfcmdR4cUXfOxbboi+7O6pdU8JnCMBfzRW9Rm+vOFegqRZbz/pqMO2a13OXhpYdLRNK+M1xp8Ofm3HbSZs19OggUZH7saJoCa6am3wvPQ+djsDdgVfEiAfAuLOz/dCOQdujY5YUtL+ik103Fl/j9qZr5MHXdF01Fvx3Q6f/f0UU57R/b+rAzW+PPUZyaZIINs+kd4Wy/Oxfau1/9Vw7uv4PqSdeytkYOnaOUZZn/PT5zyXyp8Zkq8MNrWNyGnfxne7BgOZp8JOT/p67PPHApe8ofCfYa4x7Ku8DACQJcgCbKnvVYw+uvLP5qhWASFZq3qwa7Hl7xw07ALlIarGbJ9/5NJz9x2/a/K9ky398Znu6qK8qrdfkAOp/36bfVFKkkgJhAhcbV3h6R+YCzRDmolFTafK72gxRCvUim2U0cEe0/G+mbddtDth2fHg+f0PlkWVB57kGjAUXGzonxFnqAydm8ff76cFr/sovZe8mxXTHxkhkMbB4+K7WpmUqWby0z8PHcYXQftrOd4xy1cf1SQDunDz71jHvvFHi/lMp/oFbdByA5ZoTaY5t54wWiLWqn9W+qBC5TK9dNvF12MP+ygv/Vnf99V/LHQe7ja2PWvnojfKf1aYr42b+I84/jz9GguQsLlW9etfQhT1BI5dhc7F/LLNYmfWPUgwF7h7pvPqfnRMA3M2WfcXCX1avk2BGXjiamwPTb/bZrU/J/zVcUziJ09eJ9g7Txvy9H5mrp8a7LUjPS5HKBABGHtWKi8Wy+JA6MjHnVKqwKSYzXxENAHGaE9/nDM0/r3B5kz1mvVW17VbA8VGK3d/aW66awWz4/DYXa2ra9NL8xOC3xu01Hx2t57+R4vz1r2dM/rwlGS/v1/OTPe767oqKKyMzvJwohsvaur83a2/+V1U7L0aY7gPsFr7yUm1MBOC4wTdjXOLTnHYxAIgSNNoZV4dxz+n4DHkJFYWv1DRyoUsg0cpnSi59/8ATkCHM9Zoab6y15a1KX8ujTtp/RB0NAPedrsCjBFzRd0v7/uhNm8Ngflu+5EBRYBzvN+x4r4XfHg+Ki+tqQ/ElY+tD4N6hGi74rElu2T7x9pRjktaJAffAJ97OExSbNujKUzY1nzVY1yT/H3/QUaelt6HyalvHaNCEk0ic/mtNYdbKSCt9C8fXEqNo7XPZG+8YOycQm1B6SuOsqN0TPD4X8wsCS1Or03YNnDNaAIhUysk11phjNHxlc2PwvK/zYatsr1L+c0lIbedza4BvWJeqlABu2Dr4W0hSAhAI5Su0cJp8qzTOPt99uoZ6mnts3u3Y5anaxIBM3HdYPjMZ/nK+bjhobAcAkGq57LynpXCYm0N3hha1QHwtMYJIkdMokBR0j+hfTo0TICtBbLgVMCkgSs9f7dtOzDm13l5wR1v7nZS4Gbcs6i3/oa/fw1d4D00/+a9Uc1Zq2D5s5x0+RRulCgD+oZlIqpADwMDx3qr6cCc67ta+dpffViYdbk/kXNdN713r+OB2v+XhNJPdzg57bcfUs5jeoqb72ealOYuRLENdIh8FAPlKAEBiZi3f1ow8tWgZ4IZQmSv9h0SpJn9DspxPzNhgd8egsqQxJVyRwtRfPJfKT23/T23F3YCaScAVfbvgg7P8+v/QnaPFXb+t3RBahLNvmI9v54C+YmlhrIMvRPfMrBuyOKGjzt4TacLqyTRHMfL0GCq+SChKztTKJS6LsczsBABx6t4tio7T+4q9CYhKytMWav2tj7O/5vw7lS43rjnDTwQLFBkpGn7eaKgBd4MbOE53YnXH5qs27yvrl1YXYOX7PVAu8X7jpYXb9t/+6K1jbgAOQ9ch38kpGau8G0KZUBrYPXaN8o+1QOAduwGAXBgNAFy2PuF0yFwrsFgqm34k87cRx3QV2AIwNzEaa/q8rcOJDocR0h83LjPXOewAEJOwGynrYqV8AjwtO/84Uuvrx1gvGyq942S3Mfuc6rNts64e5JoS/c09laPJvnk/84PQg5Yqy3MPyxvfKnM9+vhFz2Tn8oPEFH3ecf2jox9NYCrlb7anTWp9ojPW5uZeGc1NztS6DIpufjE49/njERbt7Q1pZ40Luhqbk4do3R31vppCu+KFSWNfZdqbtTLfoPehqaClyWrvb705ptSU+gb8GLr5TnHfTAf8AbiiLYcv7XyzaPpBtYDL33HkSEDXyfNlS324/m9kCl319pwMebhHMZ9ocxEjR2+b70mjlLznQz9RScb2w7UJYgAQ6xozdXE33i8480NFfVOsUqfmj3HXd1fVD086ccRxz8n/mWo5XcbJZ/IU2M02Q+Bkw0Nz8Z92V1gizjkR3hw0araTn/sq7HitTozbYY6RZLy8/0j7wNa0dJkArfesADzutrJeZbkq1TrgHT31G/odud8KqMvuN+1obApT2FSuDXSGe9tjM2Z/3BDybJDD0KWPlRwrT5rFFf7fevwxutJS41venPyo6/1PW29mF3pn4QRcfjqH8THHlfcP+h8nWrI578WXlHctr92T7f72m+WrZ7geAgCwmyov9z9aXxkd+MBp96+zrlvGd2smPdeRoT6uHzmUdt0GQJ30yoo/v1v258BCRy77lkoGbxvL/hRwP8szj6Qqwt5IfXdeffcsbnwheuwxci3idOLoevcYBOmF672J8U+vWSvO/HCa50q1nEYGSdaWA5cgk0deHQvGcaL2qrrRsPuUGg4APL1Hn+0x+9+VyUqrN0jjcKBdsO9VV86pNFT8ri3spBEAj9tcFzgmm0g5AsUsb/HJ8dhjFLdGV71GV33f3nFT4l2ZkqvStVcNHRHPFOn0m6QAsFQW/tnIGF3j1mx+wO97uiOAYuvT4mPhntONleX+SzwAiNYXHrlmLhsGAJmstH07P0Wp1BzoBQBz6LkkrLmafozhtKt82wmZtVuif9pVW//VVM9iR8ulOdVbctQRpq0lsnh+UudBuJ9DvpQDAsfR0bFCbqviR794UelrW6X520pNH1YNcmEf1VC9sb5EN/0t+C1VTbUna+3xA6um2gkA+PL0qxeaFvSAP2piYiLyUfOJZ9jp8s7VLZLIpNMuP42OOL5C+N+EDCxwdEwkZL2MddfafIOfM/A+EDyd8TGXa4RfhJn9rzHNBwsvRmQeot/hJwxQjAgDFCPCAMWIMEAxIgxQjAgDFCPCAMWIMEAxIgxQjAgDFCPCAMWIMEAxIgxQjAgDFCPCAMWIMEAxIgxQjAgDFCPCAMWIMEAxIgxQjAgDFCPCAMWIMEAxIgxQjAgDj/2fgvjG7/Ie9yXI145qI8IA/VMQhAGqjQgDFCPCAMWIMEAxIgxQjAgDFCPCAMWIMEAxIgxQjAgDFCPCAMWIMEAxIgxQjAgDFCPCAMWIMEAxIgxQjAgDFCPCAMWIMEAxIgxQjAgDFCPCAMWIMEAxIgxQjAgDFCPCAMWIMEAxIgxQjAgDFCPCAMWIMEAxIgxQjAgDFCPCAMWIMEAxIgxQjAgDFCPCAMWIMEAxIgxQjAgDFCPCAMWIMEAxIgxQjAgDFCPCAMWIMEAxIgxQjAgDFCPCwP8C4vXFTIPj0/0AAAAASUVORK5CYII=",
+          "personalWebsite": "xx",
+          "jobTitle": "xx",
+          "expectSalary": "xx"
+        },
+        "intention": {
+          "position": "xx",
+          "city": "",
+          "salary": "",
+          "jobType": "",
+          "industry": ""
+        },
+        "education": [],
+        "work": [],
+        "project": [],
+        "awards": [],
+        "skills": [],
+        "training": [],
+        "selfEvaluation": "",
+        "hobbies": [],
+        "languages": [],
+        "portfolio": []
+      },
+      "isPublic": false,
+      "shareLink": null,
+      "shareExpireAt": null,
+      "deletedAt": null,
+      "createdAt": "2026-05-27T02:34:46.262Z",
+      "updatedAt": "2026-05-27T02:35:42.847Z"
+    },
+    {
+      "id": "e9d68d16-e073-44f3-a6e1-be3a1d5beb0d",
+      "userId": "125ee516-d037-4372-b8ad-116f23c41711",
+      "title": "未命名简历",
+      "templateId": "default",
+      "content": {
+        "basic": {
+          "name": "",
+          "gender": "",
+          "birthDate": "",
+          "phone": "",
+          "email": "",
+          "location": "",
+          "workYears": 0
+        },
+        "intention": {
+          "position": "",
+          "city": "",
+          "salary": "",
+          "jobType": "",
+          "industry": ""
+        },
+        "education": [],
+        "work": [],
+        "project": [],
+        "awards": [],
+        "skills": [],
+        "training": [],
+        "selfEvaluation": "",
+        "hobbies": [],
+        "languages": [],
+        "portfolio": []
+      },
+      "isPublic": false,
+      "shareLink": null,
+      "shareExpireAt": null,
+      "deletedAt": null,
+      "createdAt": "2026-05-27T02:37:20.684Z",
+      "updatedAt": "2026-05-27T02:37:20.684Z"
+    },
+    {
+      "id": "9f023ceb-c0a4-46a9-8181-f6d0de7f60e9",
+      "userId": "125ee516-d037-4372-b8ad-116f23c41711",
+      "title": "未命名简历",
+      "templateId": "default",
+      "content": {
+        "basic": {
+          "name": "",
+          "gender": "",
+          "birthDate": "",
+          "phone": "",
+          "email": "",
+          "location": "",
+          "workYears": 0
+        },
+        "intention": {
+          "position": "",
+          "city": "",
+          "salary": "",
+          "jobType": "",
+          "industry": ""
+        },
+        "education": [],
+        "work": [],
+        "project": [],
+        "awards": [],
+        "skills": [],
+        "training": [],
+        "selfEvaluation": "",
+        "hobbies": [],
+        "languages": [],
+        "portfolio": []
+      },
+      "isPublic": false,
+      "shareLink": null,
+      "shareExpireAt": null,
+      "deletedAt": null,
+      "createdAt": "2026-05-27T02:39:36.541Z",
+      "updatedAt": "2026-05-27T02:39:36.541Z"
+    },
+    {
+      "id": "5d9c9c20-c735-4576-b6b3-0fe01d834c88",
+      "userId": "125ee516-d037-4372-b8ad-116f23c41711",
+      "title": "未命名简历",
+      "templateId": "default",
+      "content": {
+        "basic": {
+          "name": "11",
+          "gender": "",
+          "birthDate": "2026-05-01",
+          "phone": "",
+          "email": "",
+          "location": "",
+          "workYears": 3,
+          "avatar": "data:image/png;base64,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"
+        },
+        "intention": {
+          "position": "1",
+          "city": "1",
+          "salary": "5-10K",
+          "jobType": "全职",
+          "industry": "1"
+        },
+        "education": [
+          {
+            "id": "1779849625623",
+            "school": "1",
+            "major": "1",
+            "degree": "硕士",
+            "startDate": "2026-05",
+            "endDate": "2026-05",
+            "description": "1",
+            "gpa": "1"
+          }
+        ],
+        "work": [
+          {
+            "id": "1779849641021",
+            "company": "1",
+            "position": "1",
+            "startDate": "2026-05",
+            "endDate": "2026-05",
+            "isCurrent": true,
+            "description": "1",
+            "achievements": []
+          }
+        ],
+        "project": [
+          {
+            "id": "1779849654166",
+            "name": "1",
+            "role": "1",
+            "startDate": "2026-05",
+            "endDate": "2026-05",
+            "description": "111\n1\n1\n1\n1\n1\n1\n1\n1",
+            "technologies": [],
+            "achievements": []
+          }
+        ],
+        "awards": [],
+        "skills": [],
+        "training": [],
+        "selfEvaluation": "1111",
+        "hobbies": [],
+        "languages": [],
+        "portfolio": []
+      },
+      "isPublic": false,
+      "shareLink": null,
+      "shareExpireAt": null,
+      "deletedAt": null,
+      "createdAt": "2026-05-27T02:39:51.783Z",
+      "updatedAt": "2026-05-27T02:41:33.489Z"
+    },
+    {
+      "id": "99ba4545-8857-4e45-be89-90a28bd922c2",
+      "userId": "125ee516-d037-4372-b8ad-116f23c41711",
+      "title": "未命名简历",
+      "templateId": "default",
+      "content": {
+        "basic": {
+          "name": "",
+          "gender": "",
+          "birthDate": "",
+          "phone": "",
+          "email": "",
+          "location": "",
+          "workYears": 0
+        },
+        "intention": {
+          "position": "",
+          "city": "",
+          "salary": "",
+          "jobType": "",
+          "industry": ""
+        },
+        "education": [],
+        "work": [],
+        "project": [],
+        "awards": [],
+        "skills": [],
+        "training": [],
+        "selfEvaluation": "",
+        "hobbies": [],
+        "languages": [],
+        "portfolio": []
+      },
+      "isPublic": false,
+      "shareLink": null,
+      "shareExpireAt": null,
+      "deletedAt": null,
+      "createdAt": "2026-05-27T02:47:59.789Z",
+      "updatedAt": "2026-05-27T02:47:59.789Z"
+    },
+    {
+      "id": "f12f4c38-e149-4da6-8c30-0e6426443f9a",
+      "userId": "125ee516-d037-4372-b8ad-116f23c41711",
+      "title": "未命名简历",
+      "templateId": "default",
+      "content": {
+        "basic": {
+          "name": "",
+          "gender": "",
+          "birthDate": "",
+          "phone": "",
+          "email": "",
+          "location": "",
+          "workYears": 0
+        },
+        "intention": {
+          "position": "",
+          "city": "",
+          "salary": "",
+          "jobType": "",
+          "industry": ""
+        },
+        "education": [],
+        "work": [],
+        "project": [],
+        "awards": [],
+        "skills": [],
+        "training": [],
+        "selfEvaluation": "",
+        "hobbies": [],
+        "languages": [],
+        "portfolio": []
+      },
+      "isPublic": false,
+      "shareLink": null,
+      "shareExpireAt": null,
+      "deletedAt": null,
+      "createdAt": "2026-05-27T02:48:22.467Z",
+      "updatedAt": "2026-05-27T02:48:22.467Z"
+    },
+    {
+      "id": "d8e5bb57-a1e9-44c6-b482-ed25b1a9b9f0",
+      "userId": "125ee516-d037-4372-b8ad-116f23c41711",
+      "title": "未命名简历",
+      "templateId": "default",
+      "content": {
+        "basic": {
+          "name": "",
+          "gender": "",
+          "birthDate": "",
+          "phone": "",
+          "email": "",
+          "location": "",
+          "workYears": 0
+        },
+        "intention": {
+          "position": "",
+          "city": "",
+          "salary": "",
+          "jobType": "",
+          "industry": ""
+        },
+        "education": [],
+        "work": [],
+        "project": [],
+        "awards": [],
+        "skills": [],
+        "training": [],
+        "selfEvaluation": "",
+        "hobbies": [],
+        "languages": [],
+        "portfolio": []
+      },
+      "isPublic": false,
+      "shareLink": null,
+      "shareExpireAt": null,
+      "deletedAt": null,
+      "createdAt": "2026-05-27T02:50:36.242Z",
+      "updatedAt": "2026-05-27T02:50:36.242Z"
+    },
+    {
+      "id": "fa3bf8e3-46ae-4eb7-8a98-242e92803706",
+      "userId": "125ee516-d037-4372-b8ad-116f23c41711",
+      "title": "未命名简历",
+      "templateId": "default",
+      "content": {
+        "basic": {
+          "name": "",
+          "gender": "",
+          "birthDate": "",
+          "phone": "",
+          "email": "",
+          "location": "",
+          "workYears": 0
+        },
+        "intention": {
+          "position": "",
+          "city": "",
+          "salary": "",
+          "jobType": "",
+          "industry": ""
+        },
+        "education": [],
+        "work": [],
+        "project": [],
+        "awards": [],
+        "skills": [],
+        "training": [],
+        "selfEvaluation": "",
+        "hobbies": [],
+        "languages": [],
+        "portfolio": []
+      },
+      "isPublic": false,
+      "shareLink": null,
+      "shareExpireAt": null,
+      "deletedAt": null,
+      "createdAt": "2026-05-27T02:55:17.240Z",
+      "updatedAt": "2026-05-27T02:55:17.240Z"
+    },
+    {
+      "id": "269feb80-6909-4a75-9da9-2db9621b159f",
+      "userId": "125ee516-d037-4372-b8ad-116f23c41711",
+      "title": "未命名简历",
+      "templateId": "default",
+      "content": {
+        "basic": {
+          "name": "",
+          "gender": "",
+          "birthDate": "",
+          "phone": "",
+          "email": "",
+          "location": "",
+          "workYears": 0
+        },
+        "intention": {
+          "position": "",
+          "city": "",
+          "salary": "",
+          "jobType": "",
+          "industry": ""
+        },
+        "education": [],
+        "work": [],
+        "project": [],
+        "awards": [],
+        "skills": [],
+        "training": [],
+        "selfEvaluation": "",
+        "hobbies": [],
+        "languages": [],
+        "portfolio": []
+      },
+      "isPublic": false,
+      "shareLink": null,
+      "shareExpireAt": null,
+      "deletedAt": null,
+      "createdAt": "2026-05-27T02:55:44.486Z",
+      "updatedAt": "2026-05-27T02:55:58.547Z"
     }
   ],
   "templates": [],

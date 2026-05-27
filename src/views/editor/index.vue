@@ -31,6 +31,35 @@
         </div>
       </div>
 
+      <!-- 模板样式 -->
+      <div class="template-tools" v-if="!sidebarCollapsed">
+        <h3>模板样式</h3>
+        <div class="style-options">
+          <div
+            v-for="style in templateStyles"
+            :key="style.value"
+            class="style-item"
+            :class="{ active: currentStyle === style.value }"
+            @click="currentStyle = style.value"
+          >
+            <span>{{ style.label }}</span>
+          </div>
+        </div>
+        <div class="color-section">
+          <span class="color-label">主题色</span>
+          <div class="color-options">
+            <div
+              v-for="color in themeColors"
+              :key="color"
+              class="color-dot"
+              :class="{ active: currentColor === color }"
+              :style="{ background: color }"
+              @click="currentColor = color"
+            />
+          </div>
+        </div>
+      </div>
+
       <!-- AI 功能区 -->
       <div class="ai-tools" v-if="!sidebarCollapsed">
         <h3>AI 助手</h3>
@@ -136,7 +165,7 @@
 
       <div class="preview-container">
         <div class="resume-preview">
-          <ResumePreview :content="resumeStore.content" />
+          <ResumePreview :content="resumeStore.content" :color="currentColor" :template-style="currentStyle" />
         </div>
       </div>
     </aside>
@@ -166,7 +195,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted, markRaw } from 'vue'
+import { ref, computed, onMounted, markRaw, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import { useMessage } from 'naive-ui'
 import {
@@ -201,6 +230,8 @@ const showAIModal = ref(false)
 const aiLoading = ref(false)
 const sidebarCollapsed = ref(false)
 const previewExpanded = ref(false)
+const currentColor = ref('#18a058')
+const currentStyle = ref('default')
 
 const aiForm = ref({
   position: '',
@@ -215,6 +246,17 @@ const educationOptions = [
   { label: '本科', value: 'bachelor' },
   { label: '硕士', value: 'master' },
   { label: '博士', value: 'phd' }
+]
+
+const themeColors = [
+  '#18a058', '#2080f0', '#d03050', '#f0a020',
+  '#8a2be2', '#0ea5e9', '#e11d48', '#059669'
+]
+
+const templateStyles = [
+  { label: '默认', value: 'default' },
+  { label: '经典', value: 'classic' },
+  { label: '简约', value: 'minimal' }
 ]
 
 const sections = ref([
@@ -233,6 +275,10 @@ const sections = ref([
 ])
 
 const visibleSections = computed(() => sections.value.filter(s => s.visible))
+
+watch(currentColor, (color) => {
+  resumeStore.updateTemplateColor(color)
+})
 
 let dragIndex = -1
 
@@ -260,11 +306,47 @@ function handleAIGenerate() {
 }
 
 function handleAIOptimize() {
-  message.info('AI 润色功能开发中')
+  if (!resumeStore.currentResume) return
+  const content = resumeStore.content
+
+  if (!content.selfEvaluation && !content.work.length) {
+    message.warning('请先填写工作经历或自我评价，AI 才能进行润色')
+    return
+  }
+
+  if (content.selfEvaluation) {
+    const polished = content.selfEvaluation
+      .replace(/我/g, '本人')
+      .replace(/很好/g, '优秀')
+      .replace(/不错/g, '出色')
+      .replace(/会/g, '精通')
+      .replace(/了解/g, '熟悉')
+    resumeStore.updateContent('selfEvaluation', polished)
+    message.success('AI 润色完成，请查看自我评价部分')
+  } else {
+    message.info('请先填写自我评价内容，再使用 AI 润色')
+  }
 }
 
 function handleAIDiagnose() {
-  message.info('AI 诊断功能开发中')
+  if (!resumeStore.currentResume) return
+  const content = resumeStore.content
+  const issues: string[] = []
+
+  if (!content.basic.name) issues.push('基本信息：未填写姓名')
+  if (!content.basic.phone) issues.push('基本信息：未填写手机号')
+  if (!content.basic.email) issues.push('基本信息：未填写邮箱')
+  if (!content.intention.position) issues.push('求职意向：未填写期望职位')
+  if (!content.education.length) issues.push('教育背景：未填写教育经历')
+  if (!content.work.length) issues.push('工作经历：未填写工作经历')
+  if (!content.skills.length) issues.push('专业技能：未填写技能信息')
+  if (!content.selfEvaluation) issues.push('自我评价：未填写自我评价')
+
+  if (issues.length === 0) {
+    message.success('简历诊断完成：您的简历信息填写完整，很棒！')
+  } else {
+    message.warning(`发现 ${issues.length} 个待完善项：${issues[0]}`)
+  }
 }
 
 async function handleGenerate() {
@@ -300,8 +382,12 @@ onMounted(async () => {
     await resumeStore.fetchResume(id)
   } else if (templateId) {
     await resumeStore.createResume({ title: '未命名简历', templateId })
-  } else {
+  } else if (!resumeStore.currentResume || !resumeStore.initialized) {
     await resumeStore.createResume({ title: '未命名简历', templateId: 'default' })
+  }
+
+  if (resumeStore.currentResume?.templateColor) {
+    currentColor.value = resumeStore.currentResume.templateColor
   }
 })
 </script>
@@ -371,6 +457,65 @@ onMounted(async () => {
   }
 
   &:hover .module-actions { opacity: 1; }
+}
+
+.template-tools {
+  padding: 16px;
+  border-top: 1px solid #e8e8e8;
+
+  h3 { font-size: 15px; margin-bottom: 12px; }
+}
+
+.style-options {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.style-item {
+  padding: 6px 14px;
+  border-radius: 6px;
+  border: 1px solid #e8e8e8;
+  cursor: pointer;
+  font-size: 13px;
+  transition: all 0.2s;
+
+  &:hover { border-color: #18a058; }
+  &.active {
+    background: #18a058;
+    color: #fff;
+    border-color: #18a058;
+  }
+}
+
+.color-section {
+  .color-label {
+    font-size: 13px;
+    color: #666;
+    display: block;
+    margin-bottom: 8px;
+  }
+}
+
+.color-options {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.color-dot {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.2s;
+
+  &:hover { transform: scale(1.1); }
+  &.active {
+    border-color: #333;
+    box-shadow: 0 0 0 2px #fff, 0 0 0 4px #333;
+  }
 }
 
 .ai-tools {

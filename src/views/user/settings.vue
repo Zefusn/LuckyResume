@@ -8,15 +8,15 @@
       <h3>基本信息</h3>
       <n-form :model="userForm" label-placement="left" label-width="80">
         <n-form-item label="头像">
-          <n-upload
-            action="/api/upload"
-            :max="1"
-            @finish="handleAvatarUpload"
-          >
-            <n-avatar :size="64" :src="userStore.userInfo?.avatar" round>
+          <div class="avatar-upload" @click="triggerAvatarUpload">
+            <n-avatar :size="72" :src="userStore.userInfo?.avatar" round>
               {{ userStore.userInfo?.nickname?.charAt(0) || 'U' }}
             </n-avatar>
-          </n-upload>
+            <div class="avatar-overlay">
+              <n-icon size="20" color="#fff"><CameraOutline /></n-icon>
+            </div>
+          </div>
+          <input ref="avatarInputRef" type="file" accept="image/*" style="display:none" @change="handleAvatarChange" />
         </n-form-item>
         <n-form-item label="昵称">
           <n-input v-model:value="userForm.nickname" placeholder="请输入昵称" />
@@ -63,11 +63,15 @@
 import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { useMessage } from 'naive-ui'
+import { CameraOutline } from '@vicons/ionicons5'
 import { useUserStore } from '@/stores/user'
+import { authApi } from '@/api/auth'
 
 const router = useRouter()
 const message = useMessage()
 const userStore = useUserStore()
+
+const avatarInputRef = ref<HTMLInputElement | null>(null)
 
 const userForm = ref({
   nickname: '',
@@ -85,8 +89,31 @@ const visibilityOptions = [
   { label: '密码访问', value: 'password' }
 ]
 
-function handleAvatarUpload({ file: _file }: any) {
-  message.success('头像上传成功')
+function triggerAvatarUpload() {
+  avatarInputRef.value?.click()
+}
+
+async function handleAvatarChange(event: Event) {
+  const input = event.target as HTMLInputElement
+  const file = input.files?.[0]
+  if (!file) return
+
+  if (file.size > 5 * 1024 * 1024) {
+    message.error('图片大小不能超过5MB')
+    return
+  }
+
+  try {
+    const data = await authApi.uploadAvatar(file)
+    if (userStore.user) {
+      userStore.user.avatar = data.url
+    }
+    message.success('头像上传成功')
+  } catch (error) {
+    message.error('头像上传失败')
+  }
+
+  input.value = ''
 }
 
 async function handleSave() {
@@ -138,6 +165,29 @@ onMounted(() => {
     font-size: 16px;
     margin-bottom: 16px;
   }
+}
+
+.avatar-upload {
+  position: relative;
+  cursor: pointer;
+  border-radius: 50%;
+  overflow: hidden;
+
+  &:hover .avatar-overlay {
+    opacity: 1;
+  }
+}
+
+.avatar-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.3s;
 }
 
 .danger-zone {

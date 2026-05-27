@@ -18,8 +18,8 @@ export const resumeApi = {
     return api.put<Resume>(`/resumes/${id}`, data)
   },
 
-  updateContent(id: string, content: Partial<ResumeContent>) {
-    return api.put<Resume>(`/resumes/${id}/content`, { content })
+  updateContent(id: string, content: Partial<ResumeContent>, extra?: { templateColor?: string; templateStyle?: string }) {
+    return api.put<Resume>(`/resumes/${id}/content`, { content, ...extra })
   },
 
   delete(id: string) {

@@ -56,6 +56,8 @@ router.post('/', authMiddleware, async (req, res) => {
     userId: req.userId,
     title,
     templateId,
+    templateColor: '#18a058',
+    templateStyle: 'default',
     content: { ...defaultContent, ...content },
     isPublic: false,
     shareLink: null,
@@ -72,7 +74,7 @@ router.post('/', authMiddleware, async (req, res) => {
 })
 
 router.put('/:id', authMiddleware, async (req, res) => {
-  const { title, templateId, content, isPublic } = req.body
+  const { title, templateId, templateColor, templateStyle, content, isPublic } = req.body
   const db = await getDB()
   const index = db.data.resumes.findIndex(r => r.id === req.params.id && r.userId === req.userId)
 
@@ -82,6 +84,8 @@ router.put('/:id', authMiddleware, async (req, res) => {
 
   if (title !== undefined) db.data.resumes[index].title = title
   if (templateId !== undefined) db.data.resumes[index].templateId = templateId
+  if (templateColor !== undefined) db.data.resumes[index].templateColor = templateColor
+  if (templateStyle !== undefined) db.data.resumes[index].templateStyle = templateStyle
   if (content !== undefined) db.data.resumes[index].content = content
   if (isPublic !== undefined) db.data.resumes[index].isPublic = isPublic
   db.data.resumes[index].updatedAt = new Date().toISOString()
@@ -92,7 +96,7 @@ router.put('/:id', authMiddleware, async (req, res) => {
 })
 
 router.put('/:id/content', authMiddleware, async (req, res) => {
-  const { content } = req.body
+  const { content, templateColor, templateStyle } = req.body
   const db = await getDB()
   const index = db.data.resumes.findIndex(r => r.id === req.params.id && r.userId === req.userId)
 
@@ -100,7 +104,15 @@ router.put('/:id/content', authMiddleware, async (req, res) => {
     return res.json({ code: 404, message: '简历不存在' })
   }
 
-  db.data.resumes[index].content = { ...db.data.resumes[index].content, ...content }
+  if (content) {
+    db.data.resumes[index].content = { ...db.data.resumes[index].content, ...content }
+  }
+  if (templateColor !== undefined) {
+    db.data.resumes[index].templateColor = templateColor
+  }
+  if (templateStyle !== undefined) {
+    db.data.resumes[index].templateStyle = templateStyle
+  }
   db.data.resumes[index].updatedAt = new Date().toISOString()
 
   await db.write()
@@ -203,6 +215,8 @@ function formatResume(row) {
     userId: row.userId,
     title: row.title,
     templateId: row.templateId,
+    templateColor: row.templateColor || '#18a058',
+    templateStyle: row.templateStyle || 'default',
     content: row.content || defaultContent,
     isPublic: Boolean(row.isPublic),
     shareLink: row.shareLink,

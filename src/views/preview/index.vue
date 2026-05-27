@@ -1,17 +1,37 @@
 <template>
   <div class="preview-page">
     <header class="preview-header">
-      <n-button @click="router.back()">返回</n-button>
+      <n-button @click="router.back()">
+        <template #icon>
+          <n-icon><ArrowBackOutline /></n-icon>
+        </template>
+        返回
+      </n-button>
       <h1>{{ resume?.title || '简历预览' }}</h1>
       <n-space>
-        <n-button @click="handlePrint">打印</n-button>
-        <n-button type="primary" @click="handleExportPdf">导出 PDF</n-button>
+        <n-button @click="handlePrint">
+          <template #icon>
+            <n-icon><PrintOutline /></n-icon>
+          </template>
+          打印
+        </n-button>
+        <n-button type="primary" @click="handleExportPdf">
+          <template #icon>
+            <n-icon><DownloadOutline /></n-icon>
+          </template>
+          导出 PDF
+        </n-button>
       </n-space>
     </header>
     
     <main class="preview-content">
-      <div class="resume-page" ref="resumeRef">
-        <ResumePreview v-if="resume" :content="resume.content" />
+      <div ref="resumeRef">
+        <ResumePreview 
+          v-if="resume" 
+          :content="resume.content" 
+          :color="resume.templateColor" 
+          :template-style="resume.templateStyle" 
+        />
       </div>
     </main>
   </div>
@@ -21,8 +41,11 @@
 import { ref, onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useMessage } from 'naive-ui'
+import { ArrowBackOutline, PrintOutline, DownloadOutline } from '@vicons/ionicons5'
 import { resumeApi } from '@/api/resume'
 import ResumePreview from '@/views/editor/components/ResumePreview.vue'
+import html2canvas from 'html2canvas'
+import { jsPDF } from 'jspdf'
 import type { Resume } from '@/types'
 
 const route = useRoute()
@@ -47,7 +70,48 @@ function handlePrint() {
 }
 
 async function handleExportPdf() {
-  message.info('导出功能开发中')
+  if (!resumeRef.value) {
+    message.error('未找到简历内容')
+    return
+  }
+
+  message.info('正在生成 PDF，请稍候...')
+
+  try {
+    const el = resumeRef.value.querySelector('.resume-page') as HTMLElement || resumeRef.value
+    const canvas = await html2canvas(el, {
+      scale: 2,
+      useCORS: true,
+      backgroundColor: '#ffffff'
+    })
+
+    const imgData = canvas.toDataURL('image/png')
+    const pdf = new jsPDF('p', 'mm', 'a4')
+    const pdfWidth = pdf.internal.pageSize.getWidth()
+    const pdfHeight = pdf.internal.pageSize.getHeight()
+    const imgWidth = pdfWidth
+    const imgHeight = (canvas.height * pdfWidth) / canvas.width
+
+    let heightLeft = imgHeight
+    let position = 0
+
+    pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight)
+    heightLeft -= pdfHeight
+
+    while (heightLeft > 0) {
+      position = heightLeft - imgHeight
+      pdf.addPage()
+      pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight)
+      heightLeft -= pdfHeight
+    }
+
+    const title = resume.value?.title || '简历'
+    pdf.save(`${title}.pdf`)
+    message.success('PDF 导出成功')
+  } catch (error) {
+    console.error('导出失败', error)
+    message.error('导出失败，请重试')
+  }
 }
 
 onMounted(() => {
@@ -86,7 +150,7 @@ onMounted(() => {
   justify-content: center;
 }
 
-.resume-page {
+.preview-content > div {
   width: 210mm;
   min-height: 297mm;
   background: #fff;
@@ -103,7 +167,7 @@ onMounted(() => {
     padding: 0;
   }
   
-  .resume-page {
+  .preview-content > div {
     margin: 0;
     box-shadow: none;
   }

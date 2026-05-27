@@ -78,7 +78,10 @@ export const useResumeStore = defineStore('resume', () => {
     if (!currentResume.value) return
     saving.value = true
     try {
-      const result = await resumeApi.updateContent(currentResume.value.id, currentResume.value.content)
+      const result = await resumeApi.updateContent(currentResume.value.id, currentResume.value.content, {
+        templateColor: currentResume.value.templateColor,
+        templateStyle: currentResume.value.templateStyle
+      })
       currentResume.value = result
     } catch (error) {
       console.error('保存简历失败', error)
@@ -92,7 +95,13 @@ export const useResumeStore = defineStore('resume', () => {
     if (!currentResume.value.content) {
       currentResume.value.content = createDefaultContent()
     }
-    (currentResume.value.content as any)[section] = data
+    currentResume.value.content = { ...currentResume.value.content, [section]: data }
+    scheduleAutoSave()
+  }
+
+  function updateTemplateColor(color: string) {
+    if (!currentResume.value) return
+    currentResume.value.templateColor = color
     scheduleAutoSave()
   }
 
@@ -108,6 +117,10 @@ export const useResumeStore = defineStore('resume', () => {
   async function deleteResume(id: string) {
     await resumeApi.delete(id)
     resumeList.value = resumeList.value.filter(r => r.id !== id)
+    if (currentResume.value?.id === id) {
+      currentResume.value = null
+      initialized.value = false
+    }
   }
 
   async function fetchTrashList() {
@@ -137,12 +150,14 @@ export const useResumeStore = defineStore('resume', () => {
     loading,
     saving,
     content,
+    initialized,
     fetchResumeList,
     fetchResume,
     createResume,
     ensureResume,
     saveResume,
     updateContent,
+    updateTemplateColor,
     deleteResume,
     fetchTrashList,
     restoreResume,

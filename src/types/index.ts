@@ -13,6 +13,8 @@ export interface Resume {
   userId: string
   title: string
   templateId: string
+  templateColor?: string
+  templateStyle?: string
   content: ResumeContent
   isPublic: boolean
   shareLink?: string

@@ -2,6 +2,38 @@ import { Router } from 'express'
 import { v4 as uuidv4 } from 'uuid'
 import { getDB } from '../db/init.js'
 import { authMiddleware, generateToken } from '../middleware/auth.js'
+import multer from 'multer'
+import { fileURLToPath } from 'url'
+import { dirname, join } from 'path'
+import { mkdirSync, existsSync } from 'fs'
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
+
+const uploadDir = join(__dirname, '..', 'uploads')
+if (!existsSync(uploadDir)) {
+  mkdirSync(uploadDir, { recursive: true })
+}
+
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => cb(null, uploadDir),
+  filename: (req, file, cb) => {
+    const ext = file.originalname.split('.').pop()
+    cb(null, `${uuidv4()}.${ext}`)
+  }
+})
+
+const upload = multer({
+  storage,
+  limits: { fileSize: 5 * 1024 * 1024 },
+  fileFilter: (req, file, cb) => {
+    if (file.mimetype.startsWith('image/')) {
+      cb(null, true)
+    } else {
+      cb(new Error('只允许上传图片文件'))
+    }
+  }
+})
 
 const router = Router()
 
@@ -111,6 +143,26 @@ router.put('/profile', authMiddleware, async (req, res) => {
   await db.write()
 
   res.json({ code: 200, data: formatUser(db.data.users[userIndex]) })
+})
+
+router.post('/avatar', authMiddleware, upload.single('avatar'), async (req, res) => {
+  if (!req.file) {
+    return res.json({ code: 400, message: '请选择图片' })
+  }
+
+  const db = await getDB()
+  const userIndex = db.data.users.findIndex(u => u.id === req.userId)
+
+  if (userIndex === -1) {
+    return res.json({ code: 404, message: '用户不存在' })
+  }
+
+  const avatarUrl = `/uploads/${req.file.filename}`
+  db.data.users[userIndex].avatar = avatarUrl
+  db.data.users[userIndex].updatedAt = new Date().toISOString()
+  await db.write()
+
+  res.json({ code: 200, data: { url: avatarUrl } })
 })
 
 function formatUser(user) {

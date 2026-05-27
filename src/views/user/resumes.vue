@@ -16,6 +16,7 @@
           v-for="resume in resumeList" 
           :key="resume.id" 
           class="resume-card"
+          @click="handleEdit(resume)"
         >
           <div class="card-preview">
             <div class="preview-placeholder">
@@ -52,12 +53,13 @@
 </template>
 
 <script setup lang="ts">
-import { h, onMounted } from 'vue'
+import { h, computed, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { useMessage, useDialog } from 'naive-ui'
 import { NIcon } from 'naive-ui'
 import { AddOutline, DocumentTextOutline, CopyOutline, ShareOutline, TrashOutline } from '@vicons/ionicons5'
 import { useResumeStore } from '@/stores/resume'
+import { resumeApi } from '@/api/resume'
 import type { Resume } from '@/types'
 
 const router = useRouter()
@@ -97,10 +99,10 @@ function handlePreview(resume: Resume) {
 async function handleAction(key: string, resume: Resume) {
   switch (key) {
     case 'copy':
-      message.info('复制功能开发中')
+      await handleCopy(resume)
       break
     case 'share':
-      message.info('分享功能开发中')
+      await handleShare(resume)
       break
     case 'delete':
       dialog.warning({
@@ -114,6 +116,26 @@ async function handleAction(key: string, resume: Resume) {
         }
       })
       break
+  }
+}
+
+async function handleCopy(resume: Resume) {
+  try {
+    await resumeApi.duplicate(resume.id)
+    await resumeStore.fetchResumeList()
+    message.success('复制成功')
+  } catch (error) {
+    message.error('复制失败')
+  }
+}
+
+async function handleShare(resume: Resume) {
+  try {
+    const data = await resumeApi.getShareLink(resume.id, '7d')
+    await navigator.clipboard.writeText(data.link)
+    message.success('分享链接已复制到剪贴板，7天内有效')
+  } catch (error) {
+    message.error('分享失败')
   }
 }
 
@@ -152,6 +174,7 @@ onMounted(() => {
   border-radius: 8px;
   overflow: hidden;
   transition: all 0.2s;
+  cursor: pointer;
   
   &:hover {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
