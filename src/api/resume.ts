@@ -26,6 +26,10 @@ export const resumeApi = {
     return api.delete<void>(`/resumes/${id}`)
   },
 
+  clearAll() {
+    return api.delete<{ count: number }>('/resumes')
+  },
+
   restore(id: string) {
     return api.post<void>(`/resumes/${id}/restore`)
   },

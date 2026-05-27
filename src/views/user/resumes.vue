@@ -2,12 +2,17 @@
   <div class="resumes-page">
     <div class="page-header">
       <h2>我的简历</h2>
-      <n-button type="primary" @click="handleCreate">
-        <template #icon>
-          <n-icon><AddOutline /></n-icon>
-        </template>
-        创建简历
-      </n-button>
+      <n-space>
+        <n-button quaternary type="error" size="small" @click="handleClearAll" v-if="resumeList.length">
+          清空全部
+        </n-button>
+        <n-button type="primary" @click="handleCreate">
+          <template #icon>
+            <n-icon><AddOutline /></n-icon>
+          </template>
+          创建简历
+        </n-button>
+      </n-space>
     </div>
     
     <n-spin :show="loading">
@@ -86,6 +91,19 @@ function getActionOptions(_resume: Resume) {
 
 function handleCreate() {
   router.push('/editor')
+}
+
+function handleClearAll() {
+  dialog.warning({
+    title: '清空全部简历',
+    content: `确定清空所有 ${resumeList.value.length} 份简历？清空后可在回收站恢复。`,
+    positiveText: '清空',
+    negativeText: '取消',
+    onPositiveClick: async () => {
+      await resumeStore.clearAllResumes()
+      message.success('已清空全部简历')
+    }
+  })
 }
 
 function handleEdit(resume: Resume) {

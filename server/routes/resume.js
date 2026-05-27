@@ -132,6 +132,19 @@ router.delete('/:id', authMiddleware, async (req, res) => {
   res.json({ code: 200, message: '已移至回收站' })
 })
 
+router.delete('/', authMiddleware, async (req, res) => {
+  const db = await getDB()
+  let count = 0
+  db.data.resumes.forEach(r => {
+    if (r.userId === req.userId && !r.deletedAt) {
+      r.deletedAt = new Date().toISOString()
+      count++
+    }
+  })
+  await db.write()
+  res.json({ code: 200, message: `已清空 ${count} 份简历`, data: { count } })
+})
+
 router.post('/:id/restore', authMiddleware, async (req, res) => {
   const db = await getDB()
   const index = db.data.resumes.findIndex(r => r.id === req.params.id && r.userId === req.userId)

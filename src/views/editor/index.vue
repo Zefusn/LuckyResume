@@ -381,9 +381,13 @@ onMounted(async () => {
   if (id) {
     await resumeStore.fetchResume(id)
   } else if (templateId) {
-    await resumeStore.createResume({ title: '未命名简历', templateId })
-  } else if (!resumeStore.currentResume || !resumeStore.initialized) {
-    await resumeStore.createResume({ title: '未命名简历', templateId: 'default' })
+    const result = await resumeStore.createResume({ title: '未命名简历', templateId })
+    router.replace(`/editor/${result.id}`)
+  } else if (resumeStore.currentResume && resumeStore.initialized) {
+    router.replace(`/editor/${resumeStore.currentResume.id}`)
+  } else {
+    const result = await resumeStore.createResume({ title: '未命名简历', templateId: 'default' })
+    router.replace(`/editor/${result.id}`)
   }
 
   if (resumeStore.currentResume?.templateColor) {

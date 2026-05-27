@@ -47,7 +47,7 @@
       "isPublic": false,
       "shareLink": null,
       "shareExpireAt": null,
-      "deletedAt": null,
+      "deletedAt": "2026-05-27T05:55:29.895Z",
       "createdAt": "2026-05-26T14:28:27.064Z",
       "updatedAt": "2026-05-26T14:28:27.064Z"
     },
@@ -87,7 +87,7 @@
       "isPublic": false,
       "shareLink": null,
       "shareExpireAt": null,
-      "deletedAt": null,
+      "deletedAt": "2026-05-27T05:55:29.895Z",
       "createdAt": "2026-05-26T14:30:31.384Z",
       "updatedAt": "2026-05-26T14:30:31.384Z"
     },
@@ -127,7 +127,7 @@
       "isPublic": false,
       "shareLink": null,
       "shareExpireAt": null,
-      "deletedAt": null,
+      "deletedAt": "2026-05-27T05:55:29.895Z",
       "createdAt": "2026-05-26T14:30:32.233Z",
       "updatedAt": "2026-05-26T14:31:50.134Z"
     },
@@ -167,7 +167,7 @@
       "isPublic": false,
       "shareLink": null,
       "shareExpireAt": null,
-      "deletedAt": null,
+      "deletedAt": "2026-05-27T05:55:29.895Z",
       "createdAt": "2026-05-26T14:35:39.737Z",
       "updatedAt": "2026-05-26T14:36:18.148Z"
     },
@@ -207,7 +207,7 @@
       "isPublic": false,
       "shareLink": null,
       "shareExpireAt": null,
-      "deletedAt": null,
+      "deletedAt": "2026-05-27T05:55:29.895Z",
       "createdAt": "2026-05-26T14:37:04.329Z",
       "updatedAt": "2026-05-26T14:37:04.329Z"
     },
@@ -247,7 +247,7 @@
       "isPublic": false,
       "shareLink": null,
       "shareExpireAt": null,
-      "deletedAt": null,
+      "deletedAt": "2026-05-27T05:55:29.895Z",
       "createdAt": "2026-05-26T14:37:05.095Z",
       "updatedAt": "2026-05-26T14:37:05.095Z"
     },
@@ -287,7 +287,7 @@
       "isPublic": false,
       "shareLink": null,
       "shareExpireAt": null,
-      "deletedAt": null,
+      "deletedAt": "2026-05-27T05:55:29.895Z",
       "createdAt": "2026-05-26T14:37:39.517Z",
       "updatedAt": "2026-05-26T14:37:39.517Z"
     },
@@ -327,7 +327,7 @@
       "isPublic": false,
       "shareLink": null,
       "shareExpireAt": null,
-      "deletedAt": null,
+      "deletedAt": "2026-05-27T05:55:29.895Z",
       "createdAt": "2026-05-26T14:40:13.536Z",
       "updatedAt": "2026-05-26T14:40:38.618Z"
     },
@@ -367,7 +367,7 @@
       "isPublic": false,
       "shareLink": null,
       "shareExpireAt": null,
-      "deletedAt": null,
+      "deletedAt": "2026-05-27T05:55:29.895Z",
       "createdAt": "2026-05-26T14:51:45.697Z",
       "updatedAt": "2026-05-26T14:51:45.697Z"
     },
@@ -407,7 +407,7 @@
       "isPublic": false,
       "shareLink": null,
       "shareExpireAt": null,
-      "deletedAt": null,
+      "deletedAt": "2026-05-27T05:55:29.895Z",
       "createdAt": "2026-05-26T14:51:53.267Z",
       "updatedAt": "2026-05-26T14:51:53.267Z"
     },
@@ -447,7 +447,7 @@
       "isPublic": false,
       "shareLink": null,
       "shareExpireAt": null,
-      "deletedAt": null,
+      "deletedAt": "2026-05-27T05:55:29.895Z",
       "createdAt": "2026-05-26T14:52:01.118Z",
       "updatedAt": "2026-05-26T14:52:01.118Z"
     },
@@ -487,7 +487,7 @@
       "isPublic": false,
       "shareLink": null,
       "shareExpireAt": null,
-      "deletedAt": null,
+      "deletedAt": "2026-05-27T05:55:29.895Z",
       "createdAt": "2026-05-26T14:52:09.776Z",
       "updatedAt": "2026-05-26T14:52:09.776Z"
     },
@@ -527,7 +527,7 @@
       "isPublic": false,
       "shareLink": null,
       "shareExpireAt": null,
-      "deletedAt": null,
+      "deletedAt": "2026-05-27T05:55:29.895Z",
       "createdAt": "2026-05-26T14:52:25.432Z",
       "updatedAt": "2026-05-26T14:52:25.432Z"
     },
@@ -567,7 +567,7 @@
       "isPublic": false,
       "shareLink": null,
       "shareExpireAt": null,
-      "deletedAt": null,
+      "deletedAt": "2026-05-27T05:55:29.895Z",
       "createdAt": "2026-05-26T14:53:34.415Z",
       "updatedAt": "2026-05-26T14:53:34.415Z"
     },
@@ -607,7 +607,7 @@
       "isPublic": false,
       "shareLink": null,
       "shareExpireAt": null,
-      "deletedAt": null,
+      "deletedAt": "2026-05-27T05:55:29.895Z",
       "createdAt": "2026-05-26T14:55:22.713Z",
       "updatedAt": "2026-05-26T14:55:22.713Z"
     },
@@ -647,7 +647,7 @@
       "isPublic": false,
       "shareLink": null,
       "shareExpireAt": null,
-      "deletedAt": null,
+      "deletedAt": "2026-05-27T05:55:29.895Z",
       "createdAt": "2026-05-26T14:58:04.213Z",
       "updatedAt": "2026-05-26T14:58:04.213Z"
     },
@@ -687,7 +687,7 @@
       "isPublic": false,
       "shareLink": null,
       "shareExpireAt": null,
-      "deletedAt": null,
+      "deletedAt": "2026-05-27T05:55:29.895Z",
       "createdAt": "2026-05-26T14:59:21.048Z",
       "updatedAt": "2026-05-26T14:59:36.561Z"
     },
@@ -727,7 +727,7 @@
       "isPublic": false,
       "shareLink": null,
       "shareExpireAt": null,
-      "deletedAt": null,
+      "deletedAt": "2026-05-27T05:55:29.895Z",
       "createdAt": "2026-05-26T15:00:02.037Z",
       "updatedAt": "2026-05-26T15:00:02.037Z"
     },
@@ -767,7 +767,7 @@
       "isPublic": false,
       "shareLink": null,
       "shareExpireAt": null,
-      "deletedAt": null,
+      "deletedAt": "2026-05-27T05:55:29.895Z",
       "createdAt": "2026-05-26T15:00:09.063Z",
       "updatedAt": "2026-05-26T15:00:09.063Z"
     },
@@ -819,7 +819,7 @@
       "isPublic": false,
       "shareLink": null,
       "shareExpireAt": null,
-      "deletedAt": null,
+      "deletedAt": "2026-05-27T05:55:29.895Z",
       "createdAt": "2026-05-26T15:00:17.585Z",
       "updatedAt": "2026-05-26T15:01:09.643Z"
     },
@@ -881,7 +881,7 @@
       "isPublic": false,
       "shareLink": null,
       "shareExpireAt": null,
-      "deletedAt": null,
+      "deletedAt": "2026-05-27T05:55:29.895Z",
       "createdAt": "2026-05-26T15:05:12.490Z",
       "updatedAt": "2026-05-26T15:05:42.908Z"
     },
@@ -921,7 +921,7 @@
       "isPublic": false,
       "shareLink": null,
       "shareExpireAt": null,
-      "deletedAt": null,
+      "deletedAt": "2026-05-27T05:55:29.895Z",
       "createdAt": "2026-05-26T15:12:28.762Z",
       "updatedAt": "2026-05-26T15:12:28.762Z"
     },
@@ -961,7 +961,7 @@
       "isPublic": false,
       "shareLink": null,
       "shareExpireAt": null,
-      "deletedAt": null,
+      "deletedAt": "2026-05-27T05:55:29.895Z",
       "createdAt": "2026-05-26T15:13:29.299Z",
       "updatedAt": "2026-05-26T15:13:39.269Z"
     },
@@ -1001,7 +1001,7 @@
       "isPublic": false,
       "shareLink": null,
       "shareExpireAt": null,
-      "deletedAt": null,
+      "deletedAt": "2026-05-27T05:55:29.895Z",
       "createdAt": "2026-05-26T15:13:39.785Z",
       "updatedAt": "2026-05-26T15:13:39.785Z"
     },
@@ -1041,7 +1041,7 @@
       "isPublic": false,
       "shareLink": null,
       "shareExpireAt": null,
-      "deletedAt": null,
+      "deletedAt": "2026-05-27T05:55:29.895Z",
       "createdAt": "2026-05-26T15:14:30.986Z",
       "updatedAt": "2026-05-26T15:14:30.986Z"
     },
@@ -1121,7 +1121,7 @@
       "isPublic": false,
       "shareLink": null,
       "shareExpireAt": null,
-      "deletedAt": null,
+      "deletedAt": "2026-05-27T05:55:29.895Z",
       "createdAt": "2026-05-26T15:14:32.954Z",
       "updatedAt": "2026-05-26T15:14:32.954Z"
     },
@@ -1161,7 +1161,7 @@
       "isPublic": false,
       "shareLink": null,
       "shareExpireAt": null,
-      "deletedAt": null,
+      "deletedAt": "2026-05-27T05:55:29.895Z",
       "createdAt": "2026-05-26T15:14:54.227Z",
       "updatedAt": "2026-05-26T15:15:48.572Z"
     },
@@ -1201,7 +1201,7 @@
       "isPublic": false,
       "shareLink": null,
       "shareExpireAt": null,
-      "deletedAt": null,
+      "deletedAt": "2026-05-27T05:55:29.895Z",
       "createdAt": "2026-05-26T15:18:04.263Z",
       "updatedAt": "2026-05-26T15:18:04.263Z"
     },
@@ -1241,7 +1241,7 @@
       "isPublic": false,
       "shareLink": null,
       "shareExpireAt": null,
-      "deletedAt": null,
+      "deletedAt": "2026-05-27T05:55:29.895Z",
       "createdAt": "2026-05-26T15:18:04.834Z",
       "updatedAt": "2026-05-26T15:18:04.834Z"
     },
@@ -1281,7 +1281,7 @@
       "isPublic": false,
       "shareLink": null,
       "shareExpireAt": null,
-      "deletedAt": null,
+      "deletedAt": "2026-05-27T05:55:29.895Z",
       "createdAt": "2026-05-26T15:18:05.755Z",
       "updatedAt": "2026-05-26T15:19:02.570Z"
     },
@@ -1321,7 +1321,7 @@
       "isPublic": false,
       "shareLink": null,
       "shareExpireAt": null,
-      "deletedAt": null,
+      "deletedAt": "2026-05-27T05:55:29.895Z",
       "createdAt": "2026-05-26T15:19:05.859Z",
       "updatedAt": "2026-05-26T15:19:30.568Z"
     },
@@ -1361,7 +1361,7 @@
       "isPublic": false,
       "shareLink": null,
       "shareExpireAt": null,
-      "deletedAt": null,
+      "deletedAt": "2026-05-27T05:55:29.895Z",
       "createdAt": "2026-05-26T15:19:36.225Z",
       "updatedAt": "2026-05-26T15:19:39.576Z"
     },
@@ -2180,6 +2180,90 @@
       "deletedAt": "2026-05-27T05:40:34.167Z",
       "createdAt": "2026-05-27T05:39:40.327Z",
       "updatedAt": "2026-05-27T05:39:56.625Z"
+    },
+    {
+      "id": "ee72183b-6516-436e-b8c8-9a39e500a75d",
+      "userId": "125ee516-d037-4372-b8ad-116f23c41711",
+      "title": "未命名简历",
+      "templateId": "default",
+      "templateColor": "#3B82F6",
+      "templateStyle": "default",
+      "content": {
+        "basic": {
+          "name": "",
+          "gender": "",
+          "birthDate": "",
+          "phone": "",
+          "email": "",
+          "location": "",
+          "workYears": 0
+        },
+        "intention": {
+          "position": "",
+          "city": "",
+          "salary": "",
+          "jobType": "",
+          "industry": ""
+        },
+        "education": [],
+        "work": [],
+        "project": [],
+        "awards": [],
+        "skills": [],
+        "training": [],
+        "selfEvaluation": "",
+        "hobbies": [],
+        "languages": [],
+        "portfolio": []
+      },
+      "isPublic": false,
+      "shareLink": null,
+      "shareExpireAt": null,
+      "deletedAt": "2026-05-27T05:55:29.895Z",
+      "createdAt": "2026-05-27T05:42:20.126Z",
+      "updatedAt": "2026-05-27T05:42:27.311Z"
+    },
+    {
+      "id": "0a1a8c58-3850-47fc-8991-29a23f07f4f1",
+      "userId": "125ee516-d037-4372-b8ad-116f23c41711",
+      "title": "未命名简历",
+      "templateId": "default",
+      "templateColor": "#18a058",
+      "templateStyle": "default",
+      "content": {
+        "basic": {
+          "name": "",
+          "gender": "",
+          "birthDate": "",
+          "phone": "",
+          "email": "",
+          "location": "",
+          "workYears": 0
+        },
+        "intention": {
+          "position": "",
+          "city": "",
+          "salary": "",
+          "jobType": "",
+          "industry": ""
+        },
+        "education": [],
+        "work": [],
+        "project": [],
+        "awards": [],
+        "skills": [],
+        "training": [],
+        "selfEvaluation": "",
+        "hobbies": [],
+        "languages": [],
+        "portfolio": []
+      },
+      "isPublic": false,
+      "shareLink": null,
+      "shareExpireAt": null,
+      "deletedAt": null,
+      "createdAt": "2026-05-27T05:55:35.721Z",
+      "updatedAt": "2026-05-27T05:55:43.574Z"
     }
   ],
   "templates": [],

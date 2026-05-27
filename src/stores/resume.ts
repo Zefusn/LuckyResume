@@ -116,11 +116,18 @@ export const useResumeStore = defineStore('resume', () => {
 
   async function deleteResume(id: string) {
     await resumeApi.delete(id)
-    resumeList.value = resumeList.value.filter(r => r.id !== id)
+    await fetchResumeList()
     if (currentResume.value?.id === id) {
       currentResume.value = null
       initialized.value = false
     }
+  }
+
+  async function clearAllResumes() {
+    await resumeApi.clearAll()
+    resumeList.value = []
+    currentResume.value = null
+    initialized.value = false
   }
 
   async function fetchTrashList() {
@@ -159,6 +166,7 @@ export const useResumeStore = defineStore('resume', () => {
     updateContent,
     updateTemplateColor,
     deleteResume,
+    clearAllResumes,
     fetchTrashList,
     restoreResume,
     permanentDelete
