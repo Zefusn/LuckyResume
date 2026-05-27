@@ -778,37 +778,136 @@ function getSkillLevelText(level: number): string {
   }
 }
 
-// 模板样式变体
-.template-classic {
+// ========== 模板样式 ==========
+
+// 商务 - 色块头部 + 底部色条标题
+.template-business {
   .resume-header {
-    border-bottom: 3px double var(--primary-color, #3B82F6);
+    background: var(--primary-color, #3B82F6);
+    border-bottom: none;
+    margin: -36px -40px 20px;
+    padding: 28px 40px 20px;
+    color: #fff;
+
+    .name { color: #fff; }
+    .job-title { color: rgba(255,255,255,0.9); }
+    .work-years { color: rgba(255,255,255,0.75); }
+    .divider { color: rgba(255,255,255,0.4); }
+    .contact-item { color: rgba(255,255,255,0.85); }
+  }
+
+  .avatar-wrapper {
+    border-color: rgba(255,255,255,0.4);
   }
 
   .section-title {
-    background: var(--primary-light, #e8f5e9);
-    padding: 6px 10px;
+    background: var(--primary-color, #3B82F6);
+    color: #fff;
     border-bottom: none;
-    border-radius: 4px;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 13px;
+
+    span { color: #fff; }
+    .n-icon { color: #fff !important; }
+  }
+
+  .skill-bar .skill-fill {
+    background: var(--primary-color, #3B82F6) !important;
   }
 }
 
-.template-minimal {
+// 学术 - 居中头部 + 粗体标题
+.template-academic {
   .resume-header {
-    border-bottom: 1px solid #eee;
+    text-align: center;
+    border-bottom: 2px solid var(--primary-color, #3B82F6);
+  }
+
+  .header-left {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .avatar-wrapper {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 8px;
+  }
+
+  .header-info { text-align: center; }
+  .title-line { justify-content: center; }
+  .contact-row { justify-content: center; }
+
+  .name {
+    font-size: 28px;
+    letter-spacing: 4px;
   }
 
   .section-title {
-    font-weight: 500;
-    border-bottom: 1px dashed #ddd;
-    color: #333;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    border-bottom: 1px solid #ddd;
+    color: var(--primary-color, #3B82F6);
+
+    span { letter-spacing: 2px; }
   }
 
-  .timeline-dot {
-    background: #ccc;
+  .item-header {
+    flex-direction: column;
+    gap: 2px;
   }
 
   .item-position {
+    font-style: italic;
     color: #555;
+    font-weight: 400;
   }
+}
+
+// 技术 - 左侧色条 + 小标题
+.template-tech {
+  .resume-header {
+    border-bottom: none;
+    padding-bottom: 16px;
+    margin-bottom: 20px;
+    border-left: 4px solid var(--primary-color, #3B82F6);
+    padding-left: 16px;
+  }
+
+  .name {
+    font-size: 24px;
+    letter-spacing: 1px;
+  }
+
+  .section-title {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--primary-color, #3B82F6);
+    border-bottom: none;
+    padding-bottom: 4px;
+    border-bottom: 2px solid var(--primary-color, #3B82F6);
+  }
+
+  .timeline-dot {
+    width: 6px;
+    height: 6px;
+
+    &::after {
+      left: 2px;
+      width: 1px;
+    }
+  }
+
+  .skill-bar {
+    height: 4px;
+  }
+
+  .item-name { font-size: 13px; }
 }
 </style>

@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
 }
 
 html, body {
@@ -13,6 +14,7 @@ html, body {
   font-family: $font;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
   letter-spacing: 0.01em;
 }
 
@@ -25,11 +27,14 @@ img {
   max-width: 100%;
   height: auto;
   display: block;
+  image-rendering: auto;
 }
 
 input, textarea, button, select {
   font-family: inherit;
   font-size: inherit;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 ul, ol {
@@ -53,4 +58,19 @@ ul, ol {
 ::-webkit-scrollbar-thumb {
   background: $gray-300;
   border-radius: $r-pill;
+}
+
+// 按钮和卡片抗锯齿
+button, .n-button, input, textarea, select {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+// 消除 transform 导致的模糊
+.n-button,
+.tpl-card,
+.feature-card {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }

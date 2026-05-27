@@ -249,14 +249,18 @@ const educationOptions = [
 ]
 
 const themeColors = [
-  '#3B82F6', '#0EA5E9', '#8B5CF6', '#EC4899',
-  '#F59E0B', '#10B981', '#6366F1', '#EF4444'
+  '#3B82F6', '#2563EB', '#1D4ED8',
+  '#0F766E', '#047857', '#065F46',
+  '#7C3AED', '#6D28D9',
+  '#1E40AF', '#1E3A5F', '#334155',
+  '#991B1B'
 ]
 
 const templateStyles = [
   { label: '默认', value: 'default' },
-  { label: '经典', value: 'classic' },
-  { label: '简约', value: 'minimal' }
+  { label: '商务', value: 'business' },
+  { label: '学术', value: 'academic' },
+  { label: '技术', value: 'tech' }
 ]
 
 const sections = ref([
